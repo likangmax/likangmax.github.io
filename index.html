@@ -15,6 +15,7 @@
             padding-top: 80px;
             background-color: #f4f4f9;
             scroll-behavior: smooth;
+            color: #333;
         }
         .navbar {
             background-color: #007bff;
@@ -48,6 +49,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
             transition: transform 0.3s;
+            border-radius: 50%;
         }
         .header img:hover {
             transform: scale(1.05);
@@ -110,6 +112,17 @@
                 transform: translateY(0);
             }
         }
+        .link-group a {
+            display: inline-block;
+            margin: 0 10px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+        .link-group a:hover {
+            color: #0056b3;
+        }
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2em;
@@ -117,6 +130,11 @@
             .header img {
                 width: 100%;
                 height: auto;
+                border-radius: 0;
+            }
+            .link-group a {
+                display: block;
+                margin: 5px 0;
             }
         }
     </style>
@@ -156,10 +174,11 @@
         <img src="pic/photo.png" alt="Likang Li's photo">
         <h1>Likang Li</h1>
         <p>PhD student | BNU-HKBU United International College</p>
-        <p><i class="fas fa-envelope icon"></i> <a href="mailto:lilikang@uic.edu.cn">lilikang@uic.edu.cn</a> &nbsp;&nbsp;&nbsp; 
-            <i class="fas fa-file-pdf icon"></i> <a href="doc/CV.pdf" style="font-weight: bold; text-decoration: none;">CV</a> &nbsp;&nbsp;&nbsp; 
-            <i class="fab fa-github icon"></i> <a href="https://github.com/likangmax" rel="noopener noreferrer">GitHub</a>
-        </p>
+        <div class="link-group">
+            <a href="mailto:lilikang@uic.edu.cn"><i class="fas fa-envelope icon"></i> Email</a>
+            <a href="doc/CV.pdf"><i class="fas fa-file-pdf icon"></i> CV</a>
+            <a href="https://github.com/likangmax" rel="noopener noreferrer"><i class="fab fa-github icon"></i> GitHub</a>
+        </div>
     </header>
 
     <section class="content">
