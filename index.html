@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Likang Li's personal homepage. PhD student at BNU-HKBU United International College, specializing in Bayesian Deep Learning and Statistical Computing.">
+    <meta name="keywords" content="Likang Li, Bayesian Deep Learning, Statistical Computing, PhD student, BNU-HKBU">
     <title>Likang Li - Homepage</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -12,6 +14,7 @@
             font-family: 'Arial', sans-serif;
             padding-top: 80px;
             background-color: #f4f4f9;
+            scroll-behavior: smooth;
         }
         .navbar {
             background-color: #007bff;
@@ -107,6 +110,15 @@
                 transform: translateY(0);
             }
         }
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .header img {
+                width: 100%;
+                height: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -139,23 +151,23 @@
 ================================================================== 
 -->
 
-<div class="container">
-    <div class="header" data-aos="fade-up">
-        <img src="pic/photo.png" alt="Likang Li">
+<main class="container">
+    <header class="header" data-aos="fade-up">
+        <img src="pic/photo.png" alt="Likang Li's photo">
         <h1>Likang Li</h1>
         <p>PhD student | BNU-HKBU United International College</p>
         <p><i class="fas fa-envelope icon"></i> <a href="mailto:lilikang@uic.edu.cn">lilikang@uic.edu.cn</a> &nbsp;&nbsp;&nbsp; 
             <i class="fas fa-file-pdf icon"></i> <a href="doc/CV.pdf" style="font-weight: bold; text-decoration: none;">CV</a> &nbsp;&nbsp;&nbsp; 
-            <i class="fab fa-github icon"></i> <a href="https://github.com/likangmax">GitHub</a>
+            <i class="fab fa-github icon"></i> <a href="https://github.com/likangmax" rel="noopener noreferrer">GitHub</a>
         </p>
-    </div>
+    </header>
 
-    <div class="content">
+    <section class="content">
         <h2 id="Bio" data-aos="fade-up">Bio</h2>
         <p data-aos="fade-up">
             Hello! My name is Likang LI. Welcome to my page, I try to make it interesting!🙌<br>
             I am currently an PhD student, majoring in Probability and Mathematical Statistics at BNU-HKBU United International College, supervised by 
-            <a href="https://fst.uic.edu.cn/en/faculty/faculty.htm#/jianxinpan/en" style="font-weight: bold; text-decoration: none;">Prof. Jianxin Pan.</a>
+            <a href="https://fst.uic.edu.cn/en/faculty/faculty.htm#/jianxinpan/en" style="font-weight: bold; text-decoration: none;" rel="noopener noreferrer">Prof. Jianxin Pan.</a>
             I received my first Master degree from Hong Kong Baptist University in 2022 and my Bachelor’s degree from Henan University in 2020.<br>
             My research interests focus on Bayesian Deep Learning and Statistical Computing. At the same time, I love to code 💻 and aim to extend my research through code! In life, I love running🏃 and swimming🏊, which makes me free and happy!<br>
             ✉ me if you want to connect with me for any fun or collaboration! I’m always eager to learn more and expand my horizons!<br>
@@ -299,14 +311,14 @@
         <p data-aos="fade-up">
             Email: <a href="mailto:lilikang@uic.edu.cn">lilikang@uic.edu.cn</a>
             <br>
-            GitHub: <a href="https://github.com/likangmax">https://github.com/likangmax</a>
+            GitHub: <a href="https://github.com/likangmax" rel="noopener noreferrer">https://github.com/likangmax</a>
         </p>
-    </div>
+    </section>
 
-    <div class="footer">
+    <footer class="footer">
         <p>&copy; 2024 Likang Li</p>
-    </div>
-</div>
+    </footer>
+</main>
 
 <!-- 
 ==================================================================
@@ -319,7 +331,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init();
+    $(window).on('load', function() {
+        AOS.init();
+    });
 </script>
 </body>
 </html>
