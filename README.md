@@ -8,8 +8,6 @@ A clean and minimalist personal homepage built with HTML and CSS, featuring some
 
 This template is perfect for creating a personal academic homepage with a touch of fun. The layout is straightforward, and the code is easy to understand, making it ideal for beginners and those who want a simple yet charming website.
 
-![Homepage Screenshot](pic/homepage_screenshot.jpg)
-
 ## ✨ Features
 
 - **Simple Design**: Clean and easy-to-read layout.
@@ -51,7 +49,7 @@ These effects are powered by simple CSS animations and [AOS (Animate On Scroll)]
 
 - **Email**: [lilikang@uic.edu.cn](mailto:lilikang@uic.edu.cn)
 - **GitHub**: [github.com/likangmax](https://github.com/likangmax)
-- **Zhihu**: [知乎](https://www.zhihu.com/people/likang_li)
+- **Zhihu**: [Curiosity](https://www.zhihu.com/people/likang_li)
 
 ## 📝 License
 
