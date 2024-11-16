@@ -1,4 +1,3 @@
-```markdown
 # 🌟 Simple and Fun Personal Homepage
 
 A clean and minimalist personal homepage built with HTML and CSS, featuring some delightful cartoon effects! Easily customizable by editing the HTML.
@@ -62,4 +61,3 @@ This project is open-source and available under the MIT License.
 ---
 
 Have fun customizing your own personal homepage with a touch of cartoon magic! 🦄✨
-```
