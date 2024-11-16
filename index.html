@@ -29,6 +29,23 @@
             color: #ccc !important;
         }
 
+        .header img {
+            max-width: 50%;
+            /* 将图片最大宽度限制为容器宽度的50% */
+            height: auto;
+            /* 保持宽高比 */
+            max-height: 300px;
+            /* 限制图片的最大高度 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .header img:hover {
+            transform: scale(1.05);
+            /* 鼠标悬停时略微放大 */
+        }
+
         .header {
             text-align: center;
             margin-bottom: 40px;
