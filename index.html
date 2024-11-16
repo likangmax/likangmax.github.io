@@ -2,21 +2,38 @@
 <html lang="en">
 
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Likang Li - Homepage</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta name="description" content="Likang Li's personal homepage, PhD student at BNU-HKBU UIC.">
+    <meta name="keywords" content="Likang Li, PhD, Bayesian Deep Learning, Research, Publications">
+
+    <!-- External CSS and Libraries -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <!-- Internal CSS Styles -->
     <style>
+        /* CSS Variables for Consistent Styling */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #777;
+            --font-family: 'Arial', sans-serif;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: var(--font-family);
             padding-top: 80px;
             background-color: #f4f4f9;
         }
 
         .navbar {
-            background-color: #007bff;
+            background-color: var(--primary-color);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -29,23 +46,6 @@
             color: #ccc !important;
         }
 
-        .header img {
-            max-width: 50%;
-            /* 将图片最大宽度限制为容器宽度的50% */
-            height: auto;
-            /* 保持宽高比 */
-            max-height: 300px;
-            /* 限制图片的最大高度 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: transform 0.3s;
-        }
-
-        .header img:hover {
-            transform: scale(1.05);
-            /* 鼠标悬停时略微放大 */
-        }
-
         .header {
             text-align: center;
             margin-bottom: 40px;
@@ -54,20 +54,19 @@
         .header h1 {
             font-size: 3em;
             margin: 0;
-            color: #007bff;
+            color: var(--primary-color);
             letter-spacing: 2px;
         }
 
         .header p {
             font-size: 1.2em;
-            color: #777;
+            color: var(--secondary-color);
         }
 
         .header img {
-            max-width: 100%;
-            /* 让图片自适应容器宽度 */
+            max-width: 50%;
             height: auto;
-            /* 保持图片宽高比 */
+            max-height: 300px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
             transition: transform 0.3s;
@@ -75,7 +74,6 @@
 
         .header img:hover {
             transform: scale(1.05);
-            /* 鼠标悬停时略微放大 */
         }
 
         .content {
@@ -84,15 +82,15 @@
 
         .content h2 {
             margin-top: 40px;
-            border-bottom: 2px solid #007bff;
+            border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
             letter-spacing: 1px;
-            color: #007bff;
+            color: var(--primary-color);
             scroll-margin-top: 80px;
         }
 
         .icon {
-            color: #007bff;
+            color: var(--primary-color);
             font-size: 1.2em;
             margin-right: 10px;
         }
@@ -101,7 +99,7 @@
             text-align: center;
             margin-top: 40px;
             padding: 20px;
-            background: #007bff;
+            background: var(--primary-color);
             color: white;
             border-top: 1px solid #ddd;
         }
@@ -123,11 +121,11 @@
 
         .blog-post-title {
             margin: 0;
-            color: #007bff;
+            color: var(--primary-color);
         }
 
         .blog-post-date {
-            color: #777;
+            color: var(--secondary-color);
             font-size: 0.9em;
         }
 
@@ -147,7 +145,6 @@
             }
         }
     </style>
-
 </head>
 
 <body>
@@ -160,12 +157,12 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Navigation Links -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="#Bio">Bio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#research">Research Interests</a></li>
                     <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="#projects">Research Projects</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="#teaching">Teaching Experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#awards">Awards & Honors</a></li>
                     <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
@@ -175,211 +172,157 @@
         </div>
     </nav>
 
-    <!-- 
-==================================================================
-||             从这里往下开始编辑信息，不要动上面的代码             ||
-================================================================== 
--->
-
+    <!-- Main Content Start -->
     <div class="container">
-        <div class="header" data-aos="fade-up">
-            <!-- <img src="pic/nanjing.jpg" alt="Likang Li"> -->
-            <img src="pic/nanjing.jpg" srcset="pic/nanjing.jpg 1x, pic/nanjing@2x.jpg 2x" alt="Likang Li"
+        <!-- Header Section -->
+        <header class="header" data-aos="fade-up">
+            <img src="pic/nanjing.jpg" srcset="pic/nanjing.jpg 1x, pic/nanjing@2x.jpg 2x" alt="Nanjing Scenery"
                 class="responsive-img">
 
             <h1>Likang Li</h1>
             <p>PhD student | BNU-HKBU United International College</p>
-            <p><i class="fas fa-envelope icon"></i> <a href="mailto:lilikang@uic.edu.cn">lilikang@uic.edu.cn</a>
+            <p>
+                <i class="fas fa-envelope icon"></i>
+                <a href="mailto:lilikang@uic.edu.cn" title="Send an email to Likang Li">lilikang@uic.edu.cn</a>
                 &nbsp;&nbsp;&nbsp;
-                <i class="fas fa-file-pdf icon"></i> <a href="doc/CV.pdf"
-                    style="font-weight: bold; text-decoration: none;">CV</a> &nbsp;&nbsp;&nbsp;
-                <i class="fab fa-github icon"></i> <a href="https://github.com/likangmax">GitHub</a> &nbsp;&nbsp;&nbsp;
-                <i class="fab fa-zhihu icon"></i> <a href="https://www.zhihu.com/people/likang_li">知乎</a>
+                <i class="fas fa-file-pdf icon"></i>
+                <a href="doc/CV.pdf" style="font-weight: bold; text-decoration: none;">CV</a>
+                &nbsp;&nbsp;&nbsp;
+                <i class="fab fa-github icon"></i>
+                <a href="https://github.com/likangmax">GitHub</a>
+                &nbsp;&nbsp;&nbsp;
+                <i class="fab fa-zhihu icon"></i>
+                <a href="https://www.zhihu.com/people/likang_li">知乎</a>
             </p>
-        </div>
+        </header>
 
-        <div class="content">
-            <h2 id="Bio" data-aos="fade-up">Bio</h2>
-            <p data-aos="fade-up">
-                I am a PhD student in Probability and Mathematical Statistics at BNU-HKBU United International College,
-                supervised by
-                <a href="https://fst.uic.edu.cn/en/faculty/faculty.htm#/jianxinpan/en"
-                    style="font-weight: bold; text-decoration: none;">Prof. Jianxin Pan.</a>
-                I hold a Master’s degree from HKBU and a Bachelor’s degree from Henan University.<br>
-                My research focuses on the intersection of statistical algorithms and large models, as well as
-                statistical software development. I enjoy coding 💻 to enhance my research. Outside of work, I love
-                running🏃 and swimming🏊 to stay active!<br>
-                Feel free to reach out ✉ for collaboration or discussion!
-            </p>
+        <!-- Content Sections -->
+        <main class="content">
+            <!-- Bio Section -->
+            <section id="Bio" data-aos="fade-up">
+                <h2>Bio</h2>
+                <p>
+                    I am a PhD student in Probability and Mathematical Statistics at BNU-HKBU United International College,
+                    supervised by
+                    <a href="https://fst.uic.edu.cn/en/faculty/faculty.htm#/jianxinpan/en"
+                        style="font-weight: bold; text-decoration: none;">Prof. Jianxin Pan.</a>
+                    I hold a Master’s degree from HKBU and a Bachelor’s degree from Henan University.<br>
+                    My research focuses on the intersection of statistical algorithms and large models, as well as
+                    statistical software development. I enjoy coding 💻 to enhance my research. Outside of work, I love
+                    running🏃 and swimming🏊 to stay active!<br>
+                    Feel free to reach out ✉ for collaboration or discussion!
+                </p>
+            </section>
 
+            <!-- Research Interests Section -->
+            <section id="research" data-aos="fade-up">
+                <h2>Research Interests</h2>
+                <ul>
+                    <li><strong>Statistical Algorithms in Large Models</strong></li>
+                    <li><strong>Statistical Software Development</strong></li>
+                    <li>Statistical Computing</li>
+                    <li>Medical Data Analysis</li>
+                </ul>
+            </section>
 
-            <!-- 
-==================================================================
-||                           研究兴趣                            ||
-================================================================== 
--->
+            <!-- Publications Section -->
+            <section id="publications" data-aos="fade-up">
+                <h2>Publications</h2>
+                <ul>
+                    <li>
+                        <strong>Li, L.</strong>, Author2, and Author3. "Title of the Paper." <em>Journal Name</em>, Year.
+                        <a href="#">[PDF]</a> <a href="#">[DOI]</a>
+                    </li>
+                    <li>
+                        <strong>Li, L.</strong>, Author2, and Author3. "Title of the Paper." <em>Conference Name</em>,
+                        Year. <a href="#">[PDF]</a> <a href="#">[DOI]</a>
+                    </li>
+                    <li>
+                        <strong>Li, L.</strong>, Author2, and Author3. "Title of the Paper." <em>Workshop Name</em>,
+                        Year. <a href="#">[PDF]</a> <a href="#">[DOI]</a>
+                    </li>
+                </ul>
+            </section>
 
-            <h2 id="research" data-aos="fade-up">Research Interests</h2>
-            <ul data-aos="fade-up">
-                <li><b>Statistical Algorithms in Large Models</b></li>
-                <li><b>Statistical software development</b></li>
-                <li>Statistical Computing</li>
-                <li>Medical data analysis</li>
-            </ul>
+            <!-- Teaching Experience Section -->
+            <section id="teaching" data-aos="fade-up">
+                <h2>Teaching Experience</h2>
+                <ul>
+                    <li>
+                        <strong>Teaching Assistant:</strong> Bayesian Deep Learning (Spring 2023)
+                        <p>
+                            Assisted in developing coursework, grading assignments, and providing additional instructional
+                            support.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Teaching Assistant:</strong> Machine Learning (Fall 2022)
+                        <p>
+                            Supported course instructor with lecture material preparation and guided lab sessions.
+                        </p>
+                    </li>
+                </ul>
+            </section>
 
-            <!-- 
-==================================================================
-||                           学术著作                            ||
-================================================================== 
--->
+            <!-- Awards & Honors Section -->
+            <section id="awards" data-aos="fade-up">
+                <h2>Awards & Honors</h2>
+                <ul>
+                    <li>XYZ Fellowship for Research Excellence, University of XYZ, 2023</li>
+                    <li>Best Paper Award, ABC Conference, 2022</li>
+                    <li>National Scholarship for Outstanding Students, China, 2021</li>
+                </ul>
+            </section>
 
-            <h2 id="publications" data-aos="fade-up">Publications</h2>
-            <ul data-aos="fade-up">
-                <li>
-                    **Li, L.**, Author2, and Author3. "Title of the Paper." <em>Journal Name</em>, Year. <a
-                        href="#">[PDF]</a> <a href="#">[DOI]</a>
-                </li>
-                <li>
-                    **Li, L.**, Author2, and Author3. "Title of the Paper." <em>Conference Name</em>, Year. <a
-                        href="#">[PDF]</a> <a href="#">[DOI]</a>
-                </li>
-                <li>
-                    **Li, L.**, Author2, and Author3. "Title of the Paper." <em>Workshop Name</em>, Year. <a
-                        href="#">[PDF]</a> <a href="#">[DOI]</a>
-                </li>
-            </ul>
-
-            <!-- 
-==================================================================
-||                           科研项目                            ||
-================================================================== 
--->
-
-            <!-- <h2 id="projects" data-aos="fade-up">Research Projects</h2>
-            <ul data-aos="fade-up">
-                <li>
-                    **Project 1:** Bayesian Deep Learning for Healthcare Applications
-                    <br>
+            <!-- Blog Section -->
+            <section id="blog" data-aos="fade-up">
+                <h2>Blog</h2>
+                <article class="blog-post" data-aos="fade-up">
+                    <h3 class="blog-post-title">Understanding Bayesian Deep Learning</h3>
+                    <p class="blog-post-date">April 12, 2024</p>
                     <p>
-                        Description: Investigating the use of Bayesian deep learning techniques to improve diagnostic
-                        accuracy in healthcare.
+                        Bayesian deep learning combines the flexibility of neural networks with the uncertainty modeling of
+                        Bayesian inference. In this post, we'll explore the key concepts and how they apply to practical
+                        problems.
                     </p>
-                </li>
-                <li>
-                    **Project 2:** Uncertainty Estimation in Large Language Models
+                    <a href="blog/blog01.html">Read More</a>
+                </article>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" data-aos="fade-up">
+                <h2>Contact</h2>
+                <p>
+                    Email:
+                    <a href="mailto:lilikang@uic.edu.cn" title="Send an email to Likang Li">lilikang@uic.edu.cn</a>
                     <br>
-                    <p>
-                        Description: Applying Bayesian inference methods to quantify uncertainty in predictions made by
-                        large language models.
-                    </p>
-                </li>
-                <li>
-                    **Project 3:** Variational Inference Improvements
-                    <br>
-                    <p>
-                        Description: Developing new metrics to enhance variational inference performance in Bayesian
-                        deep learning models.
-                    </p>
-                </li>
-            </ul> -->
+                    GitHub:
+                    <a href="https://github.com/likangmax">https://github.com/likangmax</a>
+                </p>
+            </section>
+        </main>
 
-            <!-- 
-==================================================================
-||                           授课信息                            ||
-================================================================== 
--->
-
-            <h2 id="teaching" data-aos="fade-up">Teaching Experience</h2>
-            <ul data-aos="fade-up">
-                <li>
-                    **Teaching Assistant:** Bayesian Deep Learning (Spring 2023)
-                    <br>
-                    <p>
-                        Assisted in developing coursework, grading assignments, and providing additional instructional
-                        support.
-                    </p>
-                </li>
-                <li>
-                    **Teaching Assistant:** Machine Learning (Fall 2022)
-                    <br>
-                    <p>
-                        Supported course instructor with lecture material preparation and guided lab sessions.
-                    </p>
-                </li>
-            </ul>
-
-            <!-- 
-==================================================================
-||                           获奖信息                            ||
-================================================================== 
--->
-
-            <h2 id="awards" data-aos="fade-up">Awards & Honors</h2>
-            <ul data-aos="fade-up">
-                <li>XYZ Fellowship for Research Excellence, University of XYZ, 2023</li>
-                <li>Best Paper Award, ABC Conference, 2022</li>
-                <li>National Scholarship for Outstanding Students, China, 2021</li>
-            </ul>
-
-            <!-- 
-==================================================================
-||                           博客写作                            ||
-================================================================== 
--->
-
-            <h2 id="blog" data-aos="fade-up">Blog</h2>
-            <div class="blog-post" data-aos="fade-up">
-                <h3 class="blog-post-title">Understanding Bayesian Deep Learning</h3>
-                <p class="blog-post-date">April 12, 2024</p>
-                <p>Bayesian deep learning combines the flexibility of neural networks with the uncertainty modeling of
-                    Bayesian inference. In this post, we'll explore the key concepts and how they apply to practical
-                    problems.</p>
-                <a href="blog/blog01.html">Read More</a>
-            </div>
-            <!-- <div class="blog-post" data-aos="fade-up">
-            <h3 class="blog-post-title">Applications of Bayesian Neural Networks in Healthcare</h3>
-            <p class="blog-post-date">March 18, 2024</p>
-            <p>Healthcare applications benefit from Bayesian deep learning by providing more accurate uncertainty estimates in diagnosis and prediction. Here, we discuss recent advancements in this area.</p>
-            <a href="#">Read More</a>
-        </div>
-        <div class="blog-post" data-aos="fade-up">
-            <h3 class="blog-post-title">Improving Variational Inference for Large Language Models</h3>
-            <p class="blog-post-date">February 22, 2024</p>
-            <p>Large language models can benefit from improved variational inference techniques to provide better uncertainty quantification. In this article, we propose some potential improvements.</p>
-            <a href="#">Read More</a>
-        </div> -->
-
-            <!-- 
-==================================================================
-||                           contact                            ||
-================================================================== 
--->
-
-            <h2 id="contact" data-aos="fade-up">Contact</h2>
-            <p data-aos="fade-up">
-                Email: <a href="mailto:lilikang@uic.edu.cn">lilikang@uic.edu.cn</a>
-                <br>
-                GitHub: <a href="https://github.com/likangmax">https://github.com/likangmax</a>
-            </p>
-        </div>
-
-        <div class="footer">
-            <p>&copy; 2024 Likang Li</p>
-        </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; <span id="current-year"></span> Likang Li</p>
+        </footer>
     </div>
+    <!-- Main Content End -->
 
-    <!-- 
-==================================================================
-||             从这里开始停止编辑信息，不要动下面的代码             ||
-================================================================== 
--->
+    <!-- External JavaScript and Libraries -->
+    <!-- Use 'defer' to improve loading performance -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Internal JavaScript -->
     <script>
+        // Initialize AOS library
         AOS.init();
+
+        // Dynamically update the footer year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 
