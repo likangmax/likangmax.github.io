@@ -1,5 +1,5 @@
-A personal homepage based on HTML and CSS, welcome to fork!
+A clean, academic personal homepage built with HTML and CSS. Easily customizable by editing the HTML.
 
-It's easy to use, just modify the code directly in html.
+Welcome to fork!
 
 Author: Likang Li
