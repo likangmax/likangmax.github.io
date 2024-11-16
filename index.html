@@ -9,143 +9,124 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            padding-top: 80px;
-            background-color: #f4f4f9;
-        }
+body {
+    font-family: 'Arial', sans-serif;
+    padding-top: 80px;
+    background-color: #f4f4f9;
+}
 
-        .navbar {
-            background-color: #007bff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+.navbar {
+    background-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        .navbar-nav a {
-            color: white !important;
-            transition: color 0.3s;
-        }
+.navbar-nav a {
+    color: white !important;
+    transition: color 0.3s;
+}
 
-        .navbar-nav a:hover {
-            color: #ccc !important;
-        }
+.navbar-nav a:hover {
+    color: #ccc !important;
+}
 
-        .header img {
-            max-width: 50%;
-            /* 将图片最大宽度限制为容器宽度的50% */
-            height: auto;
-            /* 保持宽高比 */
-            max-height: 300px;
-            /* 限制图片的最大高度 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: transform 0.3s;
-        }
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
 
-        .header img:hover {
-            transform: scale(1.05);
-            /* 鼠标悬停时略微放大 */
-        }
+.header h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #007bff;
+    letter-spacing: 2px;
+}
 
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+.header p {
+    font-size: 1.2em;
+    color: #777;
+}
 
-        .header h1 {
-            font-size: 3em;
-            margin: 0;
-            color: #007bff;
-            letter-spacing: 2px;
-        }
+.header img {
+    max-width: 100%; /* 让图片自适应容器宽度 */
+    height: auto;    /* 保持图片宽高比 */
+    max-height: 300px; /* 限制图片的最大高度 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
 
-        .header p {
-            font-size: 1.2em;
-            color: #777;
-        }
+.header img:hover {
+    transform: scale(1.05); /* 鼠标悬停时略微放大 */
+}
 
-        .header img {
-            max-width: 100%;
-            /* 让图片自适应容器宽度 */
-            height: auto;
-            /* 保持图片宽高比 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            transition: transform 0.3s;
-        }
+.content {
+    margin-bottom: 40px;
+}
 
-        .header img:hover {
-            transform: scale(1.05);
-            /* 鼠标悬停时略微放大 */
-        }
+.content h2 {
+    margin-top: 40px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+    color: #007bff;
+    scroll-margin-top: 80px;
+}
 
-        .content {
-            margin-bottom: 40px;
-        }
+.icon {
+    color: #007bff;
+    font-size: 1.2em;
+    margin-right: 10px;
+}
 
-        .content h2 {
-            margin-top: 40px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            letter-spacing: 1px;
-            color: #007bff;
-            scroll-margin-top: 80px;
-        }
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: #007bff;
+    color: white;
+    border-top: 1px solid #ddd;
+}
 
-        .icon {
-            color: #007bff;
-            font-size: 1.2em;
-            margin-right: 10px;
-        }
+.blog-post {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            background: #007bff;
-            color: white;
-            border-top: 1px solid #ddd;
-        }
+.blog-post:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
-        .blog-post {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 20px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+.blog-post-title {
+    margin: 0;
+    color: #007bff;
+}
 
-        .blog-post:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+.blog-post-date {
+    color: #777;
+    font-size: 0.9em;
+}
 
-        .blog-post-title {
-            margin: 0;
-            color: #007bff;
-        }
+.animated-header {
+    animation: fadeInDown 1s;
+}
 
-        .blog-post-date {
-            color: #777;
-            font-size: 0.9em;
-        }
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
-        .animated-header {
-            animation: fadeInDown 1s;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 
 </head>
