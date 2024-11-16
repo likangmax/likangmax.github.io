@@ -1,3 +1,4 @@
+```markdown
 # 🌟 Simple and Fun Personal Homepage
 
 A clean and minimalist personal homepage built with HTML and CSS, featuring some delightful cartoon effects! Easily customizable by editing the HTML.
@@ -17,21 +18,24 @@ This template is perfect for creating a personal academic homepage with a touch 
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
+### 1. Fork the Repository
 
-```bash
-git clone https://github.com/likangmax/likangmax.github.io.git
-```
+Click the **Fork** button at the top right of this repository to create your own copy.
 
-### 2. Open the Project
+### 2. Customize Your Copy
 
-Navigate to the project folder and open `index.html` in your favorite code editor.
+- **Edit Content**: Open `index.html` and replace the placeholder text with your own bio, research interests, publications, and more.
+- **Add Your Images**: Upload your own photos or illustrations to the `/pic` directory and update the image paths in the HTML.
+- **Play with Styles**: Modify the CSS in the `<style>` section or link to an external stylesheet to tweak colors, fonts, and animations.
 
-### 3. Customize
+### 3. Publish with GitHub Pages
 
-- **Edit Content**: Replace the placeholder text with your own bio, research interests, publications, and more.
-- **Add Your Images**: Swap out the images in the `/pic` directory with your own photos or illustrations.
-- **Play with Styles**: Tweak the CSS to change colors, fonts, and the look of the cartoon effects.
+Once you're happy with your changes, you can easily publish your site using GitHub Pages:
+
+1. Go to the **Settings** tab of your forked repository.
+2. Scroll down to the **Pages** section.
+3. Select the `main` branch and click **Save**.
+4. Your site will be live at `https://<your-username>.github.io/`.
 
 ## 🎉 Cartoon Effects
 
@@ -58,3 +62,4 @@ This project is open-source and available under the MIT License.
 ---
 
 Have fun customizing your own personal homepage with a touch of cartoon magic! 🦄✨
+```
