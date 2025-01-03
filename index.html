@@ -127,6 +127,57 @@ body {
     }
 }
 
+.content h4 {
+    color: #0056b3;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.content ul li ul {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.content ul li ul li {
+    color: #666;
+    font-size: 0.95em;
+}
+
+.content a {
+    color: #0056b3;
+    text-decoration: none;
+    border-bottom: 1px dotted #0056b3;
+    transition: all 0.3s ease;
+}
+
+.content a:hover {
+    color: #003d82;
+    border-bottom: 1px solid #003d82;
+}
+
+.research-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.navbar {
+    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+}
+
+.animated-header {
+    animation: fadeInDown 1.2s ease-out;
+}
+
     </style>
 
 </head>
@@ -189,11 +240,18 @@ body {
                     target="_blank">
                     Prof. Jianxin Pan.
                 </a>
-                I hold a Master’s degree from HKBU and a Bachelor’s degree from Henan University.<br>
-                My research focuses on the intersection of statistical algorithms and large models, as well as
-                statistical software development. I enjoy coding 💻 to enhance my research. Outside of work, I love
-                running🏃 and swimming🏊 to stay active!<br>
-                Feel free to reach out ✉ for collaboration or discussion!
+                Prior to joining UIC, I received my Master's degree from Hong Kong Baptist University (HKBU) and Bachelor's degree from Henan University.
+                <br><br>
+                My research lies at the intersection of statistical theory and computational methods, with a particular focus on:
+                <ul>
+                    <li>Statistical algorithms for large-scale models</li>
+                    <li>Efficient computing methods in statistics</li>
+                    <li>Development of statistical software packages</li>
+                    <li>Applications in medical data analysis</li>
+                </ul>
+                I am passionate about developing practical statistical tools that bridge theoretical advances with real-world applications.
+                <br><br>
+                Outside of research, I enjoy running🏃 and swimming🏊. I'm always open to academic collaborations and discussions!
             </p>
 
 
@@ -204,12 +262,29 @@ body {
 -->
 
             <h2 id="research" data-aos="fade-up">Research Interests</h2>
-            <ul data-aos="fade-up">
-                <li><b>Statistical Algorithms in Large Models</b></li>
-                <li><b>Statistical software development</b></li>
-                <li>Statistical Computing</li>
-                <li>Medical data analysis</li>
-            </ul>
+            <div data-aos="fade-up">
+                <h4>Primary Research Areas:</h4>
+                <ul>
+                    <li><b>Statistical Computing and Algorithms</b>
+                        <ul>
+                            <li>Efficient algorithms for large-scale statistical models</li>
+                            <li>Optimization methods in statistical computing</li>
+                        </ul>
+                    </li>
+                    <li><b>Statistical Software Development</b>
+                        <ul>
+                            <li>R package development</li>
+                            <li>Statistical computing tools</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h4>Application Areas:</h4>
+                <ul>
+                    <li>Medical data analysis and biostatistics</li>
+                    <li>High-dimensional data analysis</li>
+                </ul>
+            </div>
 
             <!-- 
 ==================================================================
