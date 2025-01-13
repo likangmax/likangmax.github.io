@@ -8,16 +8,58 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="preload" href="pic/us.jpg" as="image">
+    <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" as="style">
+    <meta name="description" content="Likang Li's academic homepage - PhD student at BNU-HKBU United International College">
+    <meta name="keywords" content="Likang Li, Statistics, Mathematical Statistics, UIC">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
     <style>
+/* 修改主题变量 */
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --bg-gradient: linear-gradient(135deg, #1a1a1a, #242424);
+    --text-color: #f0f0f0;
+    --card-bg: #2d2d2d;
+    --border-color: #4da3ff;
+    --heading-color: #4da3ff;
+    --nav-bg: linear-gradient(135deg, #003366 0%, #004080 80%, #0066cc 100%);
+    --link-color: #4da3ff;
+    --footer-bg: #003366;
+    --card-hover-transform: translateY(-5px);
+    --card-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    --blog-bg: #2d2d2d;
+}
+
+[data-theme="light"] {
+    --bg-color: #f4f4f9;
+    --bg-gradient: linear-gradient(135deg, #f8f9fa, #f4f4f9);
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --border-color: #007bff;
+    --heading-color: #007bff;
+    --nav-bg: linear-gradient(135deg, #0056b3 0%, #007bff 80%, #40a9ff 100%);
+    --link-color: #0056b3;
+    --footer-bg: #007bff;
+    --card-hover-transform: translateY(-5px);
+    --card-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    --blog-bg: #ffffff;
+}
+
+/* 修改body背景样式 */
 body {
     font-family: 'Arial', sans-serif;
     padding-top: 80px;
-    background-color: #f4f4f9;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
 }
 
 .navbar {
-    background-color: #007bff;
+    background: var(--nav-bg);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .navbar-nav a {
@@ -37,43 +79,59 @@ body {
 .header h1 {
     font-size: 3em;
     margin: 0;
-    color: #007bff;
+    color: var(--heading-color);
     letter-spacing: 2px;
 }
 
 .header p {
     font-size: 1.2em;
-    color: #777;
+    color: var(--text-color);
 }
 
 .header img {
-    max-width: 100%; /* 让图片自适应容器宽度 */
-    height: auto;    /* 保持图片宽高比 */
-    max-height: 300px; /* 限制图片的最大高度 */
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    transition: transform 0.3s;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
+    border-radius: 15px;
 }
 
 .header img:hover {
-    transform: scale(1.05); /* 鼠标悬停时略微放大 */
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: var(--card-shadow);
 }
 
 .content {
     margin-bottom: 40px;
+    animation: fadeIn 0.5s ease-out;
 }
 
 .content h2 {
     margin-top: 40px;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
     letter-spacing: 1px;
-    color: #007bff;
-    scroll-margin-top: 80px;
+    color: var(--heading-color);
+    scroll-margin-top: 100px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+.content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, var(--heading-color), transparent);
 }
 
 .icon {
-    color: #007bff;
+    color: var(--heading-color);
     font-size: 1.2em;
     margin-right: 10px;
 }
@@ -82,44 +140,149 @@ body {
     text-align: center;
     margin-top: 40px;
     padding: 20px;
-    background: #007bff;
+    background: var(--footer-bg);
     color: white;
     border-top: 1px solid #ddd;
 }
 
 .blog-post {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
+    border: none;
+    background: var(--blog-bg);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 20px;
     margin-bottom: 20px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .blog-post:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: var(--card-hover-transform);
+    box-shadow: var(--card-shadow);
 }
 
 .blog-post-title {
     margin: 0;
-    color: #007bff;
+    color: var(--heading-color);
 }
 
-.blog-post-date {
-    color: #777;
-    font-size: 0.9em;
+.content a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: linear-gradient(to right, var(--link-color), var(--link-color));
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 2px;
+    transition: background-size 0.3s ease;
 }
 
-.animated-header {
-    animation: fadeInDown 1s;
+.content a:hover {
+    background-size: 100% 1px;
+    opacity: 1;
 }
 
-@keyframes fadeInDown {
+/* 主题切换按钮样式 */
+.controls-wrapper {
+    position: fixed;
+    top: 22px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    z-index: 1031;
+}
+
+.theme-switch {
+    display: inline-block;
+    width: 36px;
+    height: 18px;
+    position: relative;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: .3s;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.slider:before {
+    position: absolute;
+    content: "☀️";
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    bottom: 1px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+input:checked + .slider {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+input:checked + .slider:before {
+    transform: translateX(18px);
+    content: "🌙";
+    background-color: white;
+}
+
+/* 移除Theme标签 */
+.theme-switch-label {
+    display: none;
+}
+
+html {
+    scroll-padding-top: 100px;
+    scroll-behavior: smooth;
+}
+
+/* 添加滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+/* 添加文本选择样式 */
+::selection {
+    background: var(--heading-color);
+    color: white;
+}
+
+/* 添加页面切换动画 */
+@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
@@ -127,62 +290,64 @@ body {
     }
 }
 
-.content h4 {
-    color: #0056b3;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    font-weight: 600;
+/* 优化深色模式下的阴影效果 */
+[data-theme="dark"] .blog-post {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.content ul li ul {
-    margin-top: 5px;
-    margin-bottom: 15px;
+/* 优化深色模式下的导航栏 */
+[data-theme="dark"] .navbar {
+    background: var(--nav-bg);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.content ul li ul li {
-    color: #666;
-    font-size: 0.95em;
+/* 优化深色模式下的文本 */
+[data-theme="dark"] .header p,
+[data-theme="dark"] .content p {
+    color: rgba(255,255,255,0.9);
 }
 
-.content a {
-    color: #0056b3;
-    text-decoration: none;
-    border-bottom: 1px dotted #0056b3;
-    transition: all 0.3s ease;
+/* 优化深色模式下的链接悬停效果 */
+[data-theme="dark"] .content a:hover {
+    color: #6eb4ff;
 }
 
-.content a:hover {
-    color: #003d82;
-    border-bottom: 1px solid #003d82;
+/* 优化主题切换按钮在深色模式下的样式 */
+[data-theme="dark"] .slider {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
-.research-card {
-    background: white;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+[data-theme="dark"] .slider:before {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
 }
 
-.research-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.content h2:target {
+    color: var(--link-color);
+    animation: highlight 1s ease;
 }
 
-.navbar {
-    background: linear-gradient(135deg, #0056b3 0%, #007bff 100%);
+@keyframes highlight {
+    0% {
+        background-color: rgba(var(--heading-color), 0.1);
+    }
+    100% {
+        background-color: transparent;
+    }
 }
-
-.animated-header {
-    animation: fadeInDown 1.2s ease-out;
-}
-
     </style>
 
 </head>
 
 <body>
+    <!-- Theme Switch -->
+    <div class="controls-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider"></div>
+        </label>
+    </div>
 
     <!-- Fixed Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -231,29 +396,27 @@ body {
         </div>
 
         <div class="content">
-            <h2 id="Bio" data-aos="fade-up">Bio</h2>
-            <p data-aos="fade-up">
-                I am a PhD student in Probability and Mathematical Statistics at BNU-HKBU United International College,
-                supervised by
-                <a href="https://fst.uic.edu.cn/en/faculty/faculty.htm#/jianxinpan/en"
-                    style="font-weight: bold; text-decoration: none;" 
-                    target="_blank">
-                    Prof. Jianxin Pan.
-                </a>
-                Prior to joining UIC, I received my Master's degree from Hong Kong Baptist University (HKBU) and Bachelor's degree from Henan University.
-                <br><br>
-                My research lies at the intersection of statistical theory and computational methods, with a particular focus on:
-                <ul>
-                    <li>Statistical algorithms for large-scale models</li>
-                    <li>Efficient computing methods in statistics</li>
-                    <li>Development of statistical software packages</li>
-                    <li>Applications in medical data analysis</li>
-                </ul>
-                I am passionate about developing practical statistical tools that bridge theoretical advances with real-world applications.
-                <br><br>
-                Outside of research, I enjoy running🏃 and swimming🏊. I'm always open to academic collaborations and discussions!
-            </p>
-
+            <div id="Bio" data-aos="fade-up">
+                <h2>Bio</h2>
+                <p>
+                    I am a PhD student in Probability and Mathematical Statistics at BNU-HKBU United International College, supervised by 
+                    <a href="https://fst.uic.edu.cn/en/faculty/faculty.htm#/jianxinpan/en" target="_blank">Prof. Jianxin Pan</a>. 
+                    Prior to joining UIC, I received my Master's degree from Hong Kong Baptist University (HKBU) and Bachelor's degree from Henan University.
+                </p>
+                <p>
+                    My research focuses on developing efficient computational methods for complex statistical models, with particular emphasis on:
+                    <ul>
+                        <li>High-performance algorithms for large-scale statistical computing</li>
+                        <li>Optimization methods in statistical inference</li>
+                        <li>Statistical software development (R packages)</li>
+                        <li>Applications in medical data analysis and bioinformatics</li>
+                    </ul>
+                </p>
+                <p>
+                    I am passionate about bridging theoretical advances with practical applications through innovative computational solutions.
+                    Outside of research, I enjoy running 🏃 and swimming 🏊. Feel free to reach out for academic collaborations or discussions!
+                </p>
+            </div>
 
             <!-- 
 ==================================================================
@@ -261,29 +424,40 @@ body {
 ================================================================== 
 -->
 
-            <h2 id="research" data-aos="fade-up">Research Interests</h2>
-            <div data-aos="fade-up">
-                <h4>Primary Research Areas:</h4>
-                <ul>
-                    <li><b>Statistical Computing and Algorithms</b>
-                        <ul>
-                            <li>Efficient algorithms for large-scale statistical models</li>
-                            <li>Optimization methods in statistical computing</li>
-                        </ul>
-                    </li>
-                    <li><b>Statistical Software Development</b>
-                        <ul>
-                            <li>R package development</li>
-                            <li>Statistical computing tools</li>
-                        </ul>
-                    </li>
-                </ul>
+            <div id="research" data-aos="fade-up">
+                <h2>Research Interests</h2>
+                <div class="research-area">
+                    <h4>Core Research Areas</h4>
+                    <ul>
+                        <li><strong>Statistical Computing & Algorithms</strong>
+                            <ul>
+                                <li>Large-scale statistical computation optimization</li>
+                                <li>Efficient algorithms for complex statistical models</li>
+                                <li>High-dimensional data analysis methods</li>
+                            </ul>
+                        </li>
+                        <li><strong>Statistical Software Development</strong>
+                            <ul>
+                                <li>R package development for statistical methods</li>
+                                <li>High-performance computing tools</li>
+                                <li>User-friendly statistical interfaces</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
                 
-                <h4>Application Areas:</h4>
-                <ul>
-                    <li>Medical data analysis and biostatistics</li>
-                    <li>High-dimensional data analysis</li>
-                </ul>
+                <div class="research-area">
+                    <h4>Application Domains</h4>
+                    <ul>
+                        <li><strong>Biostatistics & Medical Data Analysis</strong>
+                            <ul>
+                                <li>Clinical trial data analysis</li>
+                                <li>Medical imaging statistics</li>
+                                <li>Healthcare data modeling</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <!-- 
@@ -348,24 +522,33 @@ body {
 ================================================================== 
 -->
 
-            <h2 id="teaching" data-aos="fade-up">Teaching Experience</h2>
-            <ul data-aos="fade-up">
-                <!-- <li>
-                    Teaching Assistant: Bayesian Deep Learning (Spring 2023)
-                    <br>
-                    <p>
-                        Assisted in developing coursework, grading assignments, and providing additional instructional
-                        support.
-                    </p>
-                </li> -->
-                <li>
-                    Teaching Assistant: Linear Algebra, Sampling Survey, Business Analytics
-                    <br>
-                    <p>
-                        Supported course instructor with lecture material preparation and guided lab sessions.
-                    </p>
-                </li>
-            </ul>
+            <div id="teaching" data-aos="fade-up">
+                <h2>Teaching Experience</h2>
+                <div class="teaching-item">
+                    <h4>Teaching Assistant</h4>
+                    <p><strong>BNU-HKBU United International College</strong> (2022-Present)</p>
+                    <ul>
+                        <li>Linear Algebra
+                            <ul>
+                                <li>Led weekly tutorial sessions and provided one-on-one student support</li>
+                                <li>Developed supplementary learning materials and practice problems</li>
+                            </ul>
+                        </li>
+                        <li>Sampling Survey
+                            <ul>
+                                <li>Assisted with course material preparation and grading</li>
+                                <li>Conducted practical workshops on survey methodology</li>
+                            </ul>
+                        </li>
+                        <li>Business Analytics
+                            <ul>
+                                <li>Guided students through data analysis projects</li>
+                                <li>Facilitated hands-on sessions using statistical software</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
             <!-- 
 ==================================================================
@@ -386,25 +569,15 @@ body {
 ================================================================== 
 -->
 
-            <h2 id="blog" data-aos="fade-up">Blog</h2>
-            <div class="blog-post" data-aos="fade-up">
-                <h3 class="blog-post-title">解读Transformer 之 自注意力机制</h3>
-                <p class="blog-post-date">November 15, 2024</p>
-                <p>基于个人对Transformer模型架构的理解，讨论Transformer中的核心 - 自注意力机制。</p>
-                <a href="https://mp.weixin.qq.com/s/_VuS6j21dMweCiQ1_AwRhg" target="_blank">Read More</a>
+            <div id="blog" data-aos="fade-up">
+                <h2>Blog</h2>
+                <div class="blog-post">
+                    <h3 class="blog-post-title">Understanding Self-Attention in Transformer Models</h3>
+                    <p class="blog-post-date">November 15, 2024</p>
+                    <p>A comprehensive exploration of the self-attention mechanism in Transformer architectures, discussing its mathematical foundations and practical implementations.</p>
+                    <a href="https://mp.weixin.qq.com/s/_VuS6j21dMweCiQ1_AwRhg" target="_blank">Read More →</a>
+                </div>
             </div>
-            <!-- <div class="blog-post" data-aos="fade-up">
-            <h3 class="blog-post-title">Applications of Bayesian Neural Networks in Healthcare</h3>
-            <p class="blog-post-date">March 18, 2024</p>
-            <p>Healthcare applications benefit from Bayesian deep learning by providing more accurate uncertainty estimates in diagnosis and prediction. Here, we discuss recent advancements in this area.</p>
-            <a href="#">Read More</a>
-        </div>
-        <div class="blog-post" data-aos="fade-up">
-            <h3 class="blog-post-title">Improving Variational Inference for Large Language Models</h3>
-            <p class="blog-post-date">February 22, 2024</p>
-            <p>Large language models can benefit from improved variational inference techniques to provide better uncertainty quantification. In this article, we propose some potential improvements.</p>
-            <a href="#">Read More</a>
-        </div> -->
 
             <!-- 
 ==================================================================
@@ -412,12 +585,14 @@ body {
 ================================================================== 
 -->
 
-            <h2 id="contact" data-aos="fade-up">Contact</h2>
-            <p data-aos="fade-up">
-                Email: <a href="mailto:lilikang@uic.edu.cn">lilikang@uic.edu.cn</a>
-                <br>
-                GitHub: <a href="https://github.com/likangmax">https://github.com/likangmax</a>
-            </p>
+            <div id="contact" data-aos="fade-up">
+                <h2>Contact</h2>
+                <p>
+                    <i class="fas fa-envelope"></i> Email: <a href="mailto:lilikang@uic.edu.cn">lilikang@uic.edu.cn</a><br>
+                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/likangmax" target="_blank">github.com/likangmax</a><br>
+                    <i class="fas fa-map-marker-alt"></i> Location: BNU-HKBU United International College, Zhuhai, China
+                </p>
+            </div>
         </div>
 
         <div class="footer">
@@ -437,6 +612,68 @@ body {
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
+    </script>
+    <script>
+        // 延迟加载非关键JavaScript
+        window.addEventListener('load', function() {
+            // 延迟加载AOS动画库
+            setTimeout(function() {
+                AOS.init({
+                    once: true,  // 动画只播放一次
+                    offset: 100
+                });
+            }, 100);
+        });
+
+        // 添加图片加载优化
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        });
+        
+        // 优化滚动性能
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    // 在这里处理滚动相关的视觉更新
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+
+    <!-- 将主题切换脚本移到body的最后面，其他脚本之前 -->
+    <script>
+    // 主题切换功能
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    // 设置初始主题
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    toggleSwitch.checked = currentTheme === 'dark';
+
+    // 主题切换处理函数
+    function switchTheme(e) {
+        const theme = e.target.checked ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }
+
+    // 添加事件监听器
+    toggleSwitch.addEventListener('change', switchTheme);
     </script>
 </body>
 
