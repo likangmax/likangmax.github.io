@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Likang Li - Homepage</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <link rel="preload" href="pic/us.jpg" as="image">
-    <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" as="style">
     <meta name="description" content="Likang Li's academic homepage - PhD student at BNU-HKBU United International College">
     <meta name="keywords" content="Likang Li, Statistics, Mathematical Statistics, UIC">
+    <link rel="preload" href="pic/us.jpg" as="image">
+    <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" as="style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
     <style>
@@ -169,13 +167,12 @@ body {
 .content a {
     color: var(--link-color);
     text-decoration: none;
-    transition: all 0.3s ease;
     background: linear-gradient(to right, var(--link-color), var(--link-color));
     background-size: 0% 1px;
     background-position: 0 100%;
     background-repeat: no-repeat;
     padding-bottom: 2px;
-    transition: background-size 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .content a:hover {
@@ -330,7 +327,7 @@ html {
 
 @keyframes highlight {
     0% {
-        background-color: rgba(var(--heading-color), 0.1);
+        background-color: rgba(77, 163, 255, 0.1);
     }
     100% {
         background-color: transparent;
@@ -606,74 +603,100 @@ html {
 ================================================================== 
 -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script>
-        AOS.init();
+        // 移除重复的初始化，使用优化后的初始化
     </script>
     <script>
-        // 延迟加载非关键JavaScript
+        // 优化JavaScript加载和执行
         window.addEventListener('load', function() {
-            // 延迟加载AOS动画库
-            setTimeout(function() {
+            requestIdleCallback(function() {
                 AOS.init({
-                    once: true,  // 动画只播放一次
-                    offset: 100
+                    once: true,
+                    offset: 100,
+                    disable: window.innerWidth < 768
                 });
-            }, 100);
+            });
         });
 
-        // 添加图片加载优化
+        // 优化图片懒加载
         document.addEventListener('DOMContentLoaded', function() {
             const images = document.querySelectorAll('img[data-src]');
             const imageObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.removeAttribute('data-src');
-                        observer.unobserve(img);
+                        if (img.dataset.src) {
+                            const tempImage = new Image();
+                            tempImage.onload = function() {
+                                img.src = img.dataset.src;
+                                img.removeAttribute('data-src');
+                            };
+                            tempImage.src = img.dataset.src;
+                            observer.unobserve(img);
+                        }
                     }
                 });
+            }, {
+                rootMargin: '50px 0px',
+                threshold: 0.1
             });
             
             images.forEach(img => imageObserver.observe(img));
         });
         
         // 优化滚动性能
-        let ticking = false;
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                window.requestAnimationFrame(function() {
-                    // 在这里处理滚动相关的视觉更新
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
+        const scrollHandler = () => {
+            if (!window.requestAnimationFrame) return;
+            
+            let ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        // 在这里处理滚动相关的视觉更新
+                        const scrollPosition = window.scrollY;
+                        // 可以根据滚动位置执行一些优化操作
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, {passive: true});
+        };
+        
+        scrollHandler();
     </script>
 
     <!-- 将主题切换脚本移到body的最后面，其他脚本之前 -->
     <script>
-    // 主题切换功能
-    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    // 主题切换功能 - 优化性能
+    (function() {
+        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+        const currentTheme = localStorage.getItem('theme') || 'light';
 
-    // 设置初始主题
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    toggleSwitch.checked = currentTheme === 'dark';
+        // 设置初始主题
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        toggleSwitch.checked = currentTheme === 'dark';
 
-    // 主题切换处理函数
-    function switchTheme(e) {
-        const theme = e.target.checked ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-    }
+        // 主题切换处理函数
+        function switchTheme(e) {
+            const theme = e.target.checked ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        }
 
-    // 添加事件监听器
-    toggleSwitch.addEventListener('change', switchTheme);
+        // 添加事件监听器
+        toggleSwitch.addEventListener('change', switchTheme);
+        
+        // 预加载另一个主题的资源
+        if (currentTheme === 'light') {
+            document.documentElement.classList.add('preload-dark');
+        } else {
+            document.documentElement.classList.add('preload-light');
+        }
+    })();
     </script>
 </body>
 
