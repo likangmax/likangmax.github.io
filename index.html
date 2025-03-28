@@ -1,355 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Likang Li - Homepage</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <meta name="description" content="Likang Li's academic homepage - PhD student at BNU-HKBU United International College">
-    <meta name="keywords" content="Likang Li, Statistics, Mathematical Statistics, UIC">
+    <title>Likang Li - Academic Homepage</title>
+    <meta name="description" content="Likang Li's academic homepage - PhD student at Beijing Normal-Hong Kong Baptist University">
     <link rel="preload" href="pic/us.jpg" as="image">
-    <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" as="style">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
     <style>
-/* 修改主题变量 */
-[data-theme="dark"] {
-    --bg-color: #1a1a1a;
-    --bg-gradient: linear-gradient(135deg, #1a1a1a, #242424);
-    --text-color: #f0f0f0;
-    --card-bg: #2d2d2d;
-    --border-color: #4da3ff;
-    --heading-color: #4da3ff;
-    --nav-bg: linear-gradient(135deg, #003366 0%, #004080 80%, #0066cc 100%);
-    --link-color: #4da3ff;
-    --footer-bg: #003366;
-    --card-hover-transform: translateY(-5px);
-    --card-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    --blog-bg: #2d2d2d;
-}
-
-[data-theme="light"] {
-    --bg-color: #f4f4f9;
-    --bg-gradient: linear-gradient(135deg, #f8f9fa, #f4f4f9);
-    --text-color: #333;
-    --card-bg: #ffffff;
-    --border-color: #007bff;
-    --heading-color: #007bff;
-    --nav-bg: linear-gradient(135deg, #0056b3 0%, #007bff 80%, #40a9ff 100%);
-    --link-color: #0056b3;
-    --footer-bg: #007bff;
-    --card-hover-transform: translateY(-5px);
-    --card-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    --blog-bg: #ffffff;
-}
-
-/* 修改body背景样式 */
-body {
-    font-family: 'Arial', sans-serif;
-    padding-top: 80px;
-    background: var(--bg-color);
-    color: var(--text-color);
-    transition: all 0.3s ease;
-}
-
-.navbar {
-    background: var(--nav-bg);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.navbar-nav a {
-    color: white !important;
-    transition: color 0.3s;
-}
-
-.navbar-nav a:hover {
-    color: #ccc !important;
-}
-
-.header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.header h1 {
-    font-size: 3em;
-    margin: 0;
-    color: var(--heading-color);
-    letter-spacing: 2px;
-}
-
-.header p {
-    font-size: 1.2em;
-    color: var(--text-color);
-}
-
-.header img {
-    max-width: 100%;
-    height: auto;
-    max-height: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
-    border-radius: 15px;
-}
-
-.header img:hover {
-    transform: scale(1.02) translateY(-5px);
-    box-shadow: var(--card-shadow);
-}
-
-.content {
-    margin-bottom: 40px;
-    animation: fadeIn 0.5s ease-out;
-}
-
-.content h2 {
-    margin-top: 40px;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 15px;
-    letter-spacing: 1px;
-    color: var(--heading-color);
-    scroll-margin-top: 100px;
-    position: relative;
-    overflow: hidden;
-    transition: color 0.3s ease;
-}
-
-.content h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, var(--heading-color), transparent);
-}
-
-.icon {
-    color: var(--heading-color);
-    font-size: 1.2em;
-    margin-right: 10px;
-}
-
-.footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background: var(--footer-bg);
-    color: white;
-    border-top: 1px solid #ddd;
-}
-
-.blog-post {
-    border: none;
-    background: var(--blog-bg);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 12px;
-    overflow: hidden;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.blog-post:hover {
-    transform: var(--card-hover-transform);
-    box-shadow: var(--card-shadow);
-}
-
-.blog-post-title {
-    margin: 0;
-    color: var(--heading-color);
-}
-
-.content a {
-    color: var(--link-color);
-    text-decoration: none;
-    background: linear-gradient(to right, var(--link-color), var(--link-color));
-    background-size: 0% 1px;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    padding-bottom: 2px;
-    transition: all 0.3s ease;
-}
-
-.content a:hover {
-    background-size: 100% 1px;
-    opacity: 1;
-}
-
-/* 主题切换按钮样式 */
-.controls-wrapper {
-    position: fixed;
-    top: 22px;
-    right: 30px;
-    display: flex;
-    align-items: center;
-    z-index: 1031;
-}
-
-.theme-switch {
-    display: inline-block;
-    width: 36px;
-    height: 18px;
-    position: relative;
-}
-
-.theme-switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.3);
-    transition: .3s;
-    border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-}
-
-.slider:before {
-    position: absolute;
-    content: "☀️";
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 14px;
-    width: 14px;
-    left: 2px;
-    bottom: 1px;
-    background-color: white;
-    transition: .3s;
-    border-radius: 50%;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-}
-
-input:checked + .slider {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-input:checked + .slider:before {
-    transform: translateX(18px);
-    content: "🌙";
-    background-color: white;
-}
-
-/* 移除Theme标签 */
-.theme-switch-label {
-    display: none;
-}
-
-html {
-    scroll-padding-top: 100px;
-    scroll-behavior: smooth;
-}
-
-/* 添加滚动条样式 */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--border-color);
-    border-radius: 4px;
-}
-
-/* 添加文本选择样式 */
-::selection {
-    background: var(--heading-color);
-    color: white;
-}
-
-/* 添加页面切换动画 */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+    /* Modern color palette with professional tones */
+    :root {
+        /* Primary color scheme - deep blue with subtle accents */
+        --primary: #2c5282;
+        --primary-dark: #1a365d;
+        --primary-light: #4299e1;
+        --accent: #805ad5;
+        
+        /* Text and background */
+        --text: #2d3748;
+        --text-light: #718096;
+        --text-muted: #a0aec0;
+        --bg: #ffffff;
+        --bg-card: #ffffff;
+        --bg-alt: #f7fafc;
+        
+        /* UI elements */
+        --border: #e2e8f0;
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+        --shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.05);
+        --radius: 0.5rem;
+        --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        /* Font settings */
+        --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
-    to {
+
+    [data-theme="dark"] {
+        /* Dark mode - elegant deep blues and purples */
+        --primary: #63b3ed;
+        --primary-dark: #2b6cb0;
+        --primary-light: #90cdf4;
+        --accent: #b794f4;
+        
+        /* Text and background */
+        --text: #f7fafc;
+        --text-light: #e2e8f0;
+        --text-muted: #a0aec0;
+        --bg: #1a202c;
+        --bg-card: #2d3748;
+        --bg-alt: #2d3748;
+        
+        /* UI elements */
+        --border: #4a5568;
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+        --shadow: 0 4px 6px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.3);
+        --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.2), 0 4px 6px -2px rgba(0,0,0,0.2);
+    }
+
+    /* Base styles */
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+    }
+
+    body {
+        font-family: var(--font-sans);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.7;
+        transition: var(--transition);
+        padding-top: 80px;
+        font-weight: 400;
+        letter-spacing: -0.011em;
+    }
+
+    /* Typography refinements */
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        line-height: 1.3;
+        color: var(--text);
+    }
+
+    /* Navigation */
+    .navbar {
+        background: var(--bg);
+        box-shadow: var(--shadow);
+        border-bottom: 1px solid var(--border);
+        transition: var(--transition);
+        padding: 0.75rem 1rem;
+    }
+
+    .navbar-brand {
+        font-weight: 700;
+        color: var(--primary) !important;
+        letter-spacing: -0.02em;
+        font-size: 1.25rem;
+    }
+
+    .navbar-nav .nav-link {
+        color: var(--text) !important;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        transition: var(--transition);
+        border-radius: var(--radius);
+        margin: 0 0.25rem;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: var(--primary) !important;
+        background: var(--bg-alt);
+    }
+
+    .navbar-toggler {
+        border: none;
+        padding: 0.5rem;
+    }
+
+    .navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    /* Header section */
+    .header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-top: 2rem;
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
+        margin: 1rem 0 0.5rem;
+        color: var(--primary);
+        font-weight: 700;
+    }
+
+    .header p {
+        font-size: 1.125rem;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+    }
+
+    .header img {
+        max-width: 100%;
+        height: auto;
+        max-height: 300px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-lg);
+        transition: var(--transition);
+        object-fit: cover;
+    }
+
+    .header img:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Content sections */
+    .content h2 {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.75rem;
+        color: var(--primary);
+        position: relative;
+        padding-bottom: 0.75rem;
+    }
+
+    .content h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 3rem;
+        height: 3px;
+        background: var(--primary);
+        border-radius: 2px;
+    }
+
+    /* Cards */
+    .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary-light);
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    /* Research interests cards */
+    .interest-card {
+        border-left: 4px solid var(--primary);
+        transition: var(--transition);
+    }
+
+    .interest-card:hover {
+        border-left-color: var(--accent);
+    }
+
+    .interest-card h5 {
+        color: var(--primary);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .interest-card h5 i {
+        margin-right: 0.75rem;
+        color: var(--primary);
+    }
+
+    /* Links */
+    a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: var(--transition);
+        font-weight: 500;
+    }
+
+    a:hover {
+        color: var(--primary-light);
+        text-decoration: none;
+    }
+
+    /* Footer */
+    .footer {
+        margin-top: 4rem;
+        padding: 2rem 0;
+        background: var(--bg-alt);
+        color: var(--text-light);
+        border-top: 1px solid var(--border);
+        text-align: center;
+    }
+
+    /* Theme switch */
+    .theme-switch {
+        position: fixed;
+        top: 1.25rem;
+        right: 1.25rem;
+        z-index: 1031;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--bg-card);
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .theme-switch:hover {
+        transform: scale(1.05);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .theme-switch i {
+        color: var(--primary);
+        font-size: 1.25rem;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: var(--primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 1000;
+        border: none;
+        box-shadow: var(--shadow);
+    }
+
+    .back-to-top.visible {
+        opacity: 0.9;
+        visibility: visible;
+    }
+
+    .back-to-top:hover {
+        opacity: 1;
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    /* Loading spinner */
+    .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    .loader.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .spinner {
+        width: 40px;
+        height: 40px;
+        border: 3px solid rgba(0,0,0,0.1);
+        border-radius: 50%;
+        border-top-color: var(--primary);
+        animation: spin 0.8s ease-in-out infinite;
+    }
+
+    [data-theme="dark"] .spinner {
+        border-color: rgba(255,255,255,0.1);
+        border-top-color: var(--primary);
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    /* Social icons */
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .social-icons a {
+        color: var(--text-light);
+        font-size: 1.25rem;
+        transition: var(--transition);
+    }
+
+    .social-icons a:hover {
+        color: var(--primary);
+        transform: translateY(-3px);
+    }
+
+    /* Contact info */
+    .contact-info {
+        line-height: 2;
+    }
+
+    .contact-info i {
+        width: 1.5rem;
+        text-align: center;
+        margin-right: 0.75rem;
+        color: var(--primary);
+    }
+
+    /* Animations */
+    [data-aos] {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-aos].aos-animate {
         opacity: 1;
         transform: translateY(0);
     }
-}
 
-/* 优化深色模式下的阴影效果 */
-[data-theme="dark"] .blog-post {
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-/* 优化深色模式下的导航栏 */
-[data-theme="dark"] .navbar {
-    background: var(--nav-bg);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-/* 优化深色模式下的文本 */
-[data-theme="dark"] .header p,
-[data-theme="dark"] .content p {
-    color: rgba(255,255,255,0.9);
-}
-
-/* 优化深色模式下的链接悬停效果 */
-[data-theme="dark"] .content a:hover {
-    color: #6eb4ff;
-}
-
-/* 优化主题切换按钮在深色模式下的样式 */
-[data-theme="dark"] .slider {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-[data-theme="dark"] .slider:before {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-}
-
-.content h2:target {
-    color: var(--link-color);
-    animation: highlight 1s ease;
-}
-
-@keyframes highlight {
-    0% {
-        background-color: rgba(77, 163, 255, 0.1);
+    /* Responsive adjustments */
+    @media (max-width: 991.98px) {
+        .theme-switch {
+            top: 1rem;
+            right: 5rem;
+        }
     }
-    100% {
-        background-color: transparent;
+
+    @media (max-width: 767.98px) {
+        body {
+            padding-top: 76px;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+        }
+        
+        .header img {
+            max-height: 250px;
+        }
+        
+        .content h2 {
+            font-size: 1.5rem;
+        }
     }
-}
     </style>
-
 </head>
-
 <body>
-    <!-- Theme Switch -->
-    <div class="controls-wrapper">
-        <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider"></div>
-        </label>
-    </div>
-
-    <!-- Fixed Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand animated-header" href="#">Likang Li</a>
+            <a class="navbar-brand" href="#">Likang Li</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -357,11 +430,10 @@ html {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="#Bio">Bio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#research">Research Interests</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
                     <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="#projects">Research Projects</a></li> -->
-                    <li class="nav-item"><a class="nav-link" href="#teaching">Teaching Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#awards">Awards & Honors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#teaching">Teaching</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
                     <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -369,335 +441,331 @@ html {
         </div>
     </nav>
 
-    <!-- 
-==================================================================
-||             从这里往下开始编辑信息，不要动上面的代码             ||
-================================================================== 
--->
+    <!-- Theme Switch -->
+    <div class="theme-switch" id="theme-switch" aria-label="Switch theme">
+        <i class="fas fa-moon"></i>
+    </div>
 
     <div class="container">
-        <div class="header" data-aos="fade-up">
-            <!-- <img src="pic/us.jpg" alt="Likang Li"> -->
-            <img src="pic/us.jpg" srcset="pic/us.jpg 1x, pic/us@2x.jpg 2x" alt="Likang Li"
-                class="responsive-img">
-
+        <!-- Header -->
+        <div class="header" data-aos>
+            <img src="pic/us.jpg" alt="Likang Li">
             <h1>Likang Li</h1>
-            <p>PhD student | BNU-HKBU United International College</p>
-            <p><i class="fas fa-envelope icon"></i> <a href="mailto:lilikang@uic.edu.cn">lilikang@uic.edu.cn</a>
-                &nbsp;&nbsp;&nbsp;
-                <!-- <i class="fas fa-file-pdf icon"></i> <a href="doc/CV.pdf"
-                    style="font-weight: bold; text-decoration: none;" target="_blank">CV</a> &nbsp;&nbsp;&nbsp; -->
-                <i class="fab fa-github icon"></i> <a href="https://github.com/likangmax" target="_blank">GitHub</a> &nbsp;&nbsp;&nbsp;
-                <i class="fab fa-zhihu icon"></i> <a href="https://www.zhihu.com/people/likang_li" target="_blank">Zhihu</a>
-            </p>
+            <p>PhD Student | Beijing Normal-Hong Kong Baptist University</p>
+            
+            <div class="social-icons">
+                <a href="mailto:lilikang@uic.edu.cn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/likangmax" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.zhihu.com/people/likang_li" target="_blank" rel="noopener" aria-label="Zhihu"><i class="fab fa-zhihu"></i></a>
+            </div>
         </div>
 
         <div class="content">
-            <div id="Bio" data-aos="fade-up">
-                <h2>Bio</h2>
-                <p>
-                    I am a PhD student in Probability and Mathematical Statistics at BNU-HKBU United International College, supervised by 
-                    <a href="https://fst.uic.edu.cn/en/faculty/faculty.htm#/jianxinpan/en" target="_blank">Prof. Jianxin Pan</a>. 
-                    Prior to joining UIC, I received my Master's degree from Hong Kong Baptist University (HKBU) and Bachelor's degree from Henan University.
-                </p>
-                <p>
-                    My research focuses on developing efficient computational methods for complex statistical models, with particular emphasis on:
-                    <ul>
-                        <li>High-performance algorithms for large-scale statistical computing</li>
-                        <li>Optimization methods in statistical inference</li>
-                        <li>Statistical software development (R packages)</li>
-                        <li>Applications in medical data analysis and bioinformatics</li>
-                    </ul>
-                </p>
-                <p>
-                    I am passionate about bridging theoretical advances with practical applications through innovative computational solutions.
-                    Outside of research, I enjoy running 🏃 and swimming 🏊. Feel free to reach out for academic collaborations or discussions!
-                </p>
+            <!-- Bio -->
+            <div id="Bio" data-aos>
+                <h2>Biography</h2>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <p>
+                            I am a PhD student in Probability and Mathematical Statistics at Beijing Normal-Hong Kong Baptist University, supervised by 
+                            <a href="https://fst.uic.edu.cn/en/faculty/faculty.htm#/jianxinpan/en" target="_blank" rel="noopener">Prof. Jianxin Pan</a>. 
+                            Prior to joining BNBU, I received my Master's degree from Hong Kong Baptist University (HKBU) and Bachelor's degree from Henan University.
+                        </p>
+                        <p>
+                            My research focuses on developing efficient computational methods for complex statistical models, with particular emphasis on:
+                        </p>
+                        <ul>
+                            <li>High-performance algorithms for large-scale statistical computing</li>
+                            <li>Optimization methods in statistical inference</li>
+                            <li>Statistical software development (R packages)</li>
+                            <li>Applications in medical data analysis and bioinformatics</li>
+                        </ul>
+                        <p>
+                            I am passionate about bridging theoretical advances with practical applications through innovative computational solutions.
+                            Outside of research, I enjoy running 🏃 and swimming 🏊. Feel free to reach out for academic collaborations or discussions!
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <!-- 
-==================================================================
-||                           研究兴趣                            ||
-================================================================== 
--->
-
-            <div id="research" data-aos="fade-up">
+            <!-- Research Interests -->
+            <div id="research" data-aos>
                 <h2>Research Interests</h2>
-                <div class="research-area">
-                    <h4>Core Research Areas</h4>
-                    <ul>
-                        <li><strong>Statistical Computing & Algorithms</strong>
-                            <ul>
-                                <li>Large-scale statistical computation optimization</li>
-                                <li>Efficient algorithms for complex statistical models</li>
-                                <li>High-dimensional data analysis methods</li>
-                            </ul>
-                        </li>
-                        <li><strong>Statistical Software Development</strong>
-                            <ul>
-                                <li>R package development for statistical methods</li>
-                                <li>High-performance computing tools</li>
-                                <li>User-friendly statistical interfaces</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="research-area">
-                    <h4>Application Domains</h4>
-                    <ul>
-                        <li><strong>Biostatistics & Medical Data Analysis</strong>
-                            <ul>
-                                <li>Clinical trial data analysis</li>
-                                <li>Medical imaging statistics</li>
-                                <li>Healthcare data modeling</li>
-                            </ul>
-                        </li>
-                    </ul>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card interest-card h-100">
+                            <div class="card-body">
+                                <h5><i class="fas fa-chart-line"></i>Statistical Computing</h5>
+                                <ul class="mb-0">
+                                    <li>Large-scale statistical computation optimization</li>
+                                    <li>Efficient algorithms for complex statistical models</li>
+                                    <li>High-dimensional data analysis methods</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card interest-card h-100">
+                            <div class="card-body">
+                                <h5><i class="fas fa-code"></i>Software Development</h5>
+                                <ul class="mb-0">
+                                    <li>R package development for statistical methods</li>
+                                    <li>High-performance computing tools</li>
+                                    <li>User-friendly statistical interfaces</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card interest-card h-100">
+                            <div class="card-body">
+                                <h5><i class="fas fa-heartbeat"></i>Biostatistics</h5>
+                                <ul class="mb-0">
+                                    <li>Clinical trial data analysis</li>
+                                    <li>Medical imaging statistics</li>
+                                    <li>Healthcare data modeling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- 
-==================================================================
-||                           学术著作                            ||
-================================================================== 
--->
+            <!-- Publications -->
+            <div id="publications" data-aos>
+                <h2>Publications</h2>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <ul class="mb-0 list-unstyled">
+                            <li class="mb-3">
+                                <strong>Li, L.</strong>, Author2, and Author3. (Year). "Title of the Paper." <em>Journal Name</em>. 
+                                <div class="mt-2">
+                                    <a href="#" class="btn btn-sm btn-outline-primary mr-2"><i class="fas fa-file-pdf mr-1"></i> PDF</a>
+                                    <a href="#" class="btn btn-sm btn-outline-secondary"><i class="fas fa-external-link-alt mr-1"></i> DOI</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-            <h2 id="publications" data-aos="fade-up">Publications</h2>
-            <ul data-aos="fade-up">
-                <li>
-                    Li, L., Author2, and Author3. "Title of the Paper." <em>Journal Name</em>, Year. <a
-                        href="#">[PDF]</a> <a href="#">[DOI]</a>
-                </li>
-                <!-- <li>
-                    **Li, L.**, Author2, and Author3. "Title of the Paper." <em>Conference Name</em>, Year. <a
-                        href="#">[PDF]</a> <a href="#">[DOI]</a>
-                </li>
-                <li>
-                    **Li, L.**, Author2, and Author3. "Title of the Paper." <em>Workshop Name</em>, Year. <a
-                        href="#">[PDF]</a> <a href="#">[DOI]</a>
-                </li> -->
-            </ul>
-
-            <!-- 
-==================================================================
-||                           科研项目                            ||
-================================================================== 
--->
-
-            <!-- <h2 id="projects" data-aos="fade-up">Research Projects</h2>
-            <ul data-aos="fade-up">
-                <li>
-                    **Project 1:** Bayesian Deep Learning for Healthcare Applications
-                    <br>
-                    <p>
-                        Description: Investigating the use of Bayesian deep learning techniques to improve diagnostic
-                        accuracy in healthcare.
-                    </p>
-                </li>
-                <li>
-                    **Project 2:** Uncertainty Estimation in Large Language Models
-                    <br>
-                    <p>
-                        Description: Applying Bayesian inference methods to quantify uncertainty in predictions made by
-                        large language models.
-                    </p>
-                </li>
-                <li>
-                    **Project 3:** Variational Inference Improvements
-                    <br>
-                    <p>
-                        Description: Developing new metrics to enhance variational inference performance in Bayesian
-                        deep learning models.
-                    </p>
-                </li>
-            </ul> -->
-
-            <!-- 
-==================================================================
-||                           授课信息                            ||
-================================================================== 
--->
-
-            <div id="teaching" data-aos="fade-up">
+            <!-- Teaching -->
+            <div id="teaching" data-aos>
                 <h2>Teaching Experience</h2>
-                <div class="teaching-item">
-                    <h4>Teaching Assistant</h4>
-                    <p><strong>BNU-HKBU United International College</strong> (2022-Present)</p>
-                    <ul>
-                        <li>Linear Algebra
-                            <ul>
-                                <li>Led weekly tutorial sessions and provided one-on-one student support</li>
-                                <li>Developed supplementary learning materials and practice problems</li>
-                            </ul>
-                        </li>
-                        <li>Sampling Survey
-                            <ul>
-                                <li>Assisted with course material preparation and grading</li>
-                                <li>Conducted practical workshops on survey methodology</li>
-                            </ul>
-                        </li>
-                        <li>Business Analytics
-                            <ul>
-                                <li>Guided students through data analysis projects</li>
-                                <li>Facilitated hands-on sessions using statistical software</li>
-                            </ul>
-                        </li>
-                    </ul>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h4 class="mb-3">Teaching Assistant</h4>
+                        <p><strong>Beijing Normal-Hong Kong Baptist University</strong> (2022-Present)</p>
+                        <ul class="mb-0">
+                            <li class="mb-3">
+                                <strong>Linear Algebra</strong>
+                                <ul>
+                                    <li>Led weekly tutorial sessions and provided one-on-one student support</li>
+                                    <li>Developed supplementary learning materials and practice problems</li>
+                                </ul>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Sampling Survey</strong>
+                                <ul>
+                                    <li>Assisted with course material preparation and grading</li>
+                                    <li>Conducted practical workshops on survey methodology</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Business Analytics</strong>
+                                <ul>
+                                    <li>Guided students through data analysis projects</li>
+                                    <li>Facilitated hands-on sessions using statistical software</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <!-- 
-==================================================================
-||                           获奖信息                            ||
-================================================================== 
--->
+            <!-- Awards -->
+            <div id="awards" data-aos>
+                <h2>Awards & Honors</h2>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <ul class="mb-0">
+                            <li>Graduate First-Class Scholarship, BNBU, 2022</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-            <h2 id="awards" data-aos="fade-up">Awards & Honors</h2>
-            <ul data-aos="fade-up">
-                <li>Graduate First-Class Scholarship, UIC, 2022</li>
-                <!-- <li>Best Paper Award, ABC Conference, 2022</li>
-                <li>National Scholarship for Outstanding Students, China, 2021</li> -->
-            </ul>
-
-            <!-- 
-==================================================================
-||                           博客写作                            ||
-================================================================== 
--->
-
-            <div id="blog" data-aos="fade-up">
+            <!-- Blog -->
+            <div id="blog" data-aos>
                 <h2>Blog</h2>
-                <div class="blog-post">
-                    <h3 class="blog-post-title">Understanding Self-Attention in Transformer Models</h3>
-                    <p class="blog-post-date">November 15, 2024</p>
-                    <p>A comprehensive exploration of the self-attention mechanism in Transformer architectures, discussing its mathematical foundations and practical implementations.</p>
-                    <a href="https://mp.weixin.qq.com/s/_VuS6j21dMweCiQ1_AwRhg" target="_blank">Read More →</a>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h4 class="mb-2" style="color:var(--primary);">Understanding Self-Attention in Transformer Models</h4>
+                        <p class="text-muted mb-3"><i class="far fa-calendar-alt mr-2"></i>November 15, 2024</p>
+                        <p>A comprehensive exploration of the self-attention mechanism in Transformer architectures, discussing its mathematical foundations and practical implementations.</p>
+                        <a href="https://mp.weixin.qq.com/s/_VuS6j21dMweCiQ1_AwRhg" target="_blank" rel="noopener" class="btn btn-outline-primary">
+                            Read More <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- 
-==================================================================
-||                           contact                            ||
-================================================================== 
--->
-
-            <div id="contact" data-aos="fade-up">
+            <!-- Contact -->
+            <div id="contact" data-aos>
                 <h2>Contact</h2>
-                <p>
-                    <i class="fas fa-envelope"></i> Email: <a href="mailto:lilikang@uic.edu.cn">lilikang@uic.edu.cn</a><br>
-                    <i class="fab fa-github"></i> GitHub: <a href="https://github.com/likangmax" target="_blank">github.com/likangmax</a><br>
-                    <i class="fas fa-map-marker-alt"></i> Location: BNU-HKBU United International College, Zhuhai, China
-                </p>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <p class="contact-info">
+                            <i class="fas fa-envelope"></i> Email: <a href="mailto:lilikang@uic.edu.cn">lilikang@uic.edu.cn</a><br>
+                            <i class="fab fa-github"></i> GitHub: <a href="https://github.com/likangmax" target="_blank" rel="noopener">github.com/likangmax</a><br>
+                            <i class="fas fa-map-marker-alt"></i> Location: Beijing Normal-Hong Kong Baptist University, Zhuhai, China
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="footer">
-            <p>&copy; 2024 Likang Li</p>
+            <p>&copy; 2025 Likang Li. All rights reserved.</p>
         </div>
     </div>
 
-    <!-- 
-==================================================================
-||             从这里开始停止编辑信息，不要动下面的代码             ||
-================================================================== 
--->
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" defer></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" defer></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script>
-        // 移除重复的初始化，使用优化后的初始化
-    </script>
-    <script>
-        // 优化JavaScript加载和执行
-        window.addEventListener('load', function() {
-            requestIdleCallback(function() {
-                AOS.init({
-                    once: true,
-                    offset: 100,
-                    disable: window.innerWidth < 768
-                });
-            });
-        });
+    <!-- Loading Spinner -->
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
 
-        // 优化图片懒加载
-        document.addEventListener('DOMContentLoaded', function() {
-            const images = document.querySelectorAll('img[data-src]');
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        if (img.dataset.src) {
-                            const tempImage = new Image();
-                            tempImage.onload = function() {
-                                img.src = img.dataset.src;
-                                img.removeAttribute('data-src');
-                            };
-                            tempImage.src = img.dataset.src;
-                            observer.unobserve(img);
-                        }
-                    }
-                });
-            }, {
-                rootMargin: '50px 0px',
-                threshold: 0.1
-            });
-            
-            images.forEach(img => imageObserver.observe(img));
-        });
-        
-        // 优化滚动性能
-        const scrollHandler = () => {
-            if (!window.requestAnimationFrame) return;
-            
-            let ticking = false;
-            window.addEventListener('scroll', function() {
-                if (!ticking) {
-                    window.requestAnimationFrame(function() {
-                        // 在这里处理滚动相关的视觉更新
-                        const scrollPosition = window.scrollY;
-                        // 可以根据滚动位置执行一些优化操作
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            }, {passive: true});
-        };
-        
-        scrollHandler();
-    </script>
-
-    <!-- 将主题切换脚本移到body的最后面，其他脚本之前 -->
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script>
-    // 主题切换功能 - 优化性能
     (function() {
-        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-        const currentTheme = localStorage.getItem('theme') || 'light';
-
-        // 设置初始主题
+        // Initialize theme
+        const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const storedTheme = localStorage.getItem('theme');
+        const currentTheme = storedTheme || (prefersDarkMode ? 'dark' : 'light');
         document.documentElement.setAttribute('data-theme', currentTheme);
-        toggleSwitch.checked = currentTheme === 'dark';
-
-        // 主题切换处理函数
-        function switchTheme(e) {
-            const theme = e.target.checked ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-        }
-
-        // 添加事件监听器
-        toggleSwitch.addEventListener('change', switchTheme);
         
-        // 预加载另一个主题的资源
-        if (currentTheme === 'light') {
-            document.documentElement.classList.add('preload-dark');
-        } else {
-            document.documentElement.classList.add('preload-light');
+        // Theme switch functionality
+        const themeSwitch = document.getElementById('theme-switch');
+        updateThemeIcon(currentTheme);
+        
+        themeSwitch.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            const icon = themeSwitch.querySelector('i');
+            if (theme === 'dark') {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+        }
+        
+        // Initialize animations with Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('aos-animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { 
+            threshold: 0.1,
+            rootMargin: '0px 0px -10% 0px'
+        });
+        
+        document.querySelectorAll('[data-aos]').forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Smooth scrolling with improved UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                        document.querySelector('.navbar-toggler').click();
+                    }
+                    
+                    // Smooth scroll with offset for navbar
+                    const headerOffset = 90;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        const scrollThreshold = 300;
+        
+        function handleScroll() {
+            if (window.pageYOffset > scrollThreshold) {
+                if (!backToTopButton.classList.contains('visible')) {
+                    backToTopButton.classList.add('visible');
+                }
+            } else {
+                if (backToTopButton.classList.contains('visible')) {
+                    backToTopButton.classList.remove('visible');
+                }
+            }
+        }
+        
+        // Throttle scroll events for performance
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (!scrollTimeout) {
+                scrollTimeout = setTimeout(function() {
+                    handleScroll();
+                    scrollTimeout = null;
+                }, 100);
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Hide loader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.loader').classList.add('hidden');
+            }, 300);
+        });
+        
+        // Initialize immediately if page already loaded
+        if (document.readyState === 'complete' || document.readyState === 'interactive') {
+            setTimeout(function() {
+                document.querySelector('.loader').classList.add('hidden');
+            }, 300);
         }
     })();
     </script>
 </body>
-
 </html>
