@@ -2,121 +2,716 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Stylish Blog</title>
-    <!-- 引入 Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- 引入 Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- 引入 Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- 引入 Marked.js -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c5282">
+    <title>Statistical Computing: New Frontiers | Likang Li's Blog</title>
+    <meta name="description" content="Exploring recent advancements in statistical computing methods for large-scale data analysis and their applications in modern research.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    </noscript>
     <style>
+    /* 颜色变量 - 与主页保持一致 */
+    :root {
+        /* Primary color scheme */
+        --primary: #2b6cb0;
+        --primary-dark: #1a365d;
+        --primary-light: #4299e1;
+        --accent: #6b46c1;
+        
+        /* Text and background */
+        --text: #2d3748;
+        --text-light: #4a5568;
+        --text-muted: #718096;
+        --bg: #ffffff;
+        --bg-card: #ffffff;
+        --bg-alt: #f8fafc;
+        
+        /* UI elements */
+        --border: #e2e8f0;
+        --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+        --shadow: 0 4px 8px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.06);
+        --shadow-lg: 0 12px 20px -3px rgba(0,0,0,0.06), 0 4px 8px -2px rgba(0,0,0,0.05);
+        --radius: 0.6rem;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        /* Font settings */
+        --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    }
+    
+    /* Dark mode theme */
+    [data-theme="dark"] {
+        --primary: #63b3ed;
+        --primary-dark: #2b6cb0;
+        --primary-light: #90cdf4;
+        --accent: #b794f4;
+        
+        --text: #f7fafc;
+        --text-light: #e2e8f0;
+        --text-muted: #a0aec0;
+        --bg: #171923;
+        --bg-card: #2d3748;
+        --bg-alt: #2d3748;
+        
+        --border: #4a5568;
+        --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
+        --shadow: 0 4px 8px rgba(0,0,0,0.25), 0 2px 4px rgba(0,0,0,0.3);
+        --shadow-lg: 0 12px 20px -3px rgba(0,0,0,0.3), 0 4px 8px -2px rgba(0,0,0,0.25);
+    }
+    
+    /* Base styles */
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+    }
+    
+    body {
+        font-family: var(--font-sans);
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.8;
+        transition: var(--transition);
+        padding-top: 80px;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        line-height: 1.3;
+        color: var(--text);
+        margin-bottom: 1rem;
+    }
+    
+    /* Navigation */
+    .navbar {
+        background: var(--bg);
+        box-shadow: var(--shadow);
+        border-bottom: 1px solid var(--border);
+        transition: var(--transition);
+        padding: 0.75rem 1.25rem;
+    }
+    
+    .navbar-brand {
+        font-weight: 700;
+        color: var(--primary) !important;
+        letter-spacing: -0.02em;
+        font-size: 1.25rem;
+    }
+    
+    .navbar-nav .nav-link {
+        color: var(--text) !important;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        transition: var(--transition);
+        border-radius: var(--radius);
+        margin: 0 0.3rem;
+    }
+    
+    .navbar-nav .nav-link:hover {
+        color: var(--primary) !important;
+        background: var(--bg-alt);
+        transform: translateY(-1px);
+    }
+    
+    /* Blog header */
+    .blog-header {
+        padding: 3rem 0 2rem;
+        text-align: center;
+        position: relative;
+        background: var(--bg-alt);
+        border-radius: var(--radius);
+        margin-bottom: 2.5rem;
+    }
+    
+    .blog-header h1 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    
+    .blog-header .meta {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .blog-header .tags {
+        margin-top: 1rem;
+    }
+    
+    .blog-header .tags .badge {
+        background: var(--bg-card);
+        color: var(--primary);
+        border: 1px solid var(--border);
+        font-weight: 500;
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+        margin: 0 0.3rem;
+        border-radius: 2rem;
+    }
+    
+    /* Blog content */
+    .blog-content {
+        font-size: 1.1rem;
+        line-height: 1.9;
+    }
+    
+    .blog-content p {
+        margin-bottom: 1.5rem;
+    }
+    
+    .blog-content h2 {
+        margin-top: 2.5rem;
+        margin-bottom: 1.25rem;
+        font-size: 1.8rem;
+        position: relative;
+        padding-bottom: 0.75rem;
+    }
+    
+    .blog-content h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 3rem;
+        height: 3px;
+        background: var(--primary);
+        border-radius: 2px;
+    }
+    
+    .blog-content h3 {
+        margin-top: 2rem;
+        font-size: 1.4rem;
+        color: var(--primary-dark);
+    }
+    
+    .blog-content ul, .blog-content ol {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+    }
+    
+    .blog-content li {
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Code blocks */
+    .blog-content pre {
+        background: var(--bg-alt);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1rem;
+        margin: 1.5rem 0;
+        overflow-x: auto;
+    }
+    
+    .blog-content code {
+        font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.9em;
+        color: var(--primary);
+        background: var(--bg-alt);
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+    }
+    
+    .blog-content pre code {
+        background: none;
+        padding: 0;
+        color: var(--text);
+    }
+    
+    /* Images */
+    .blog-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        margin: 2rem 0;
+    }
+    
+    /* Blockquote */
+    .blog-content blockquote {
+        border-left: 4px solid var(--primary);
+        padding-left: 1.5rem;
+        margin-left: 0;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+        color: var(--text-light);
+    }
+    
+    /* Table */
+    .blog-content table {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        border-collapse: collapse;
+    }
+    
+    .blog-content th, .blog-content td {
+        padding: 0.75rem;
+        border: 1px solid var(--border);
+    }
+    
+    .blog-content th {
+        background-color: var(--bg-alt);
+        font-weight: 600;
+    }
+    
+    /* Author bio */
+    .author-bio {
+        display: flex;
+        align-items: center;
+        margin: 3rem 0;
+        padding: 1.5rem;
+        background: var(--bg-alt);
+        border-radius: var (--radius);
+    }
+    
+    .author-bio img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 1.5rem;
+        object-fit: cover;
+    }
+    
+    .author-bio h4 {
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Related posts */
+    .related-posts {
+        margin-top: 3rem;
+    }
+    
+    .related-posts h3 {
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .related-posts h3::after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 0;
+        width: 50%;
+        height: 3px;
+        background: var(--primary);
+        border-radius: 2px;
+    }
+    
+    .related-post-card {
+        padding: 1.5rem;
+        border-radius: var(--radius);
+        transition: var(--transition);
+        border: 1px solid var(--border);
+        height: 100%;
+    }
+    
+    .related-post-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+        border-color: var(--primary-light);
+    }
+    
+    .related-post-card h5 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+        transition: var(--transition);
+    }
+    
+    .related-post-card:hover h5 {
+        color: var(--primary);
+    }
+    
+    /* Footer */
+    .footer {
+        margin-top: 4rem;
+        padding: 2rem 0;
+        background: var(--bg-alt);
+        color: var(--text-light);
+        border-top: 1px solid var(--border);
+        text-align: center;
+    }
+    
+    /* Theme switch */
+    .theme-switch {
+        position: fixed;
+        top: 1.25rem;
+        right: 1.25rem;
+        z-index: 1031;
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--bg-card);
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    
+    .theme-switch:hover {
+        transform: scale(1.05);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .theme-switch i {
+        color: var(--primary);
+        font-size: 1.25rem;
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: var(--primary);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 1000;
+        border: none;
+    }
+    
+    .back-to-top.visible {
+        opacity: 0.9;
+        visibility: visible;
+    }
+    
+    .back-to-top:hover {
+        opacity: 1;
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 991.98px) {
+        .theme-switch {
+            top: 1rem;
+            right: 5rem;
+        }
+    }
+    
+    @media (max-width: 767.98px) {
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
-            color: #343a40;
-            margin: 0;
+            padding-top: 76px;
         }
-
-        .icon {
-            font-size: 24px;
-            color: #007bff;
-            margin-right: 8px;
+        
+        .blog-header h1 {
+            font-size: 2rem;
         }
-
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 2rem 0;
+        
+        .blog-content {
+            font-size: 1rem;
+        }
+        
+        .blog-content h2 {
+            font-size: 1.5rem;
+        }
+        
+        .author-bio {
+            flex-direction: column;
             text-align: center;
-            margin-bottom: 2rem;
         }
-
-        header h1 {
-            font-weight: 700;
+        
+        .author-bio img {
+            margin-right: 0;
+            margin-bottom: 1rem;
         }
-
-        .container {
-            max-width: 900px;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            border-radius: 8px;
-        }
-
-        pre {
-            background: #f4f4f4;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        code {
-            font-family: "Courier New", Courier, monospace;
-        }
-
-        footer {
-            text-align: center;
-            margin: 3rem 0 1rem 0;
-            color: #6c757d;
-        }
+    }
     </style>
 </head>
 <body>
-    <header>
-        <i class="fab fa-github icon"></i>
-        <h1>My Stylish Blog</h1>
-        <p>Sharing knowledge and insights</p>
-    </header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Likang Li</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#research">Research</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#blog">All Posts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Theme Switch -->
+    <div class="theme-switch" id="theme-switch" aria-label="Switch theme">
+        <i class="fas fa-moon"></i>
+    </div>
     
     <div class="container">
-        <article id="blog-content"></article>
+        <!-- Blog Header -->
+        <div class="blog-header">
+            <h1>Statistical Computing: New Frontiers</h1>
+            <div class="meta">
+                <span><i class="far fa-calendar-alt mr-2"></i>October 3, 2024</span>
+                <span class="mx-3">|</span>
+                <span><i class="far fa-clock mr-2"></i>10 min read</span>
+            </div>
+            <div class="tags">
+                <span class="badge">Statistical Computing</span>
+                <span class="badge">Big Data</span>
+                <span class="badge">Machine Learning</span>
+            </div>
+        </div>
+        
+        <!-- Blog Content -->
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <article class="blog-content" id="blog-content">
+                    <!-- 内容将通过JavaScript动态加载 -->
+                </article>
+                
+                <!-- Author Bio -->
+                <div class="author-bio">
+                    <img src="../pic/us.jpg" alt="Likang Li">
+                    <div>
+                        <h4>Likang Li</h4>
+                        <p>PhD Student in Probability and Mathematical Statistics at Beijing Normal-Hong Kong Baptist University. My research focuses on computational statistics and machine learning methods.</p>
+                    </div>
+                </div>
+                
+                <!-- Related Posts -->
+                <div class="related-posts">
+                    <h3>Related Posts</h3>
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-4">
+                            <div class="related-post-card">
+                                <h5>Understanding Self-Attention in Transformer Models</h5>
+                                <p class="text-muted"><i class="far fa-calendar-alt mr-2"></i>November 15, 2024</p>
+                                <p>A comprehensive exploration of the self-attention mechanism in Transformer architectures.</p>
+                                <a href="https://mp.weixin.qq.com/s/_VuS6j21dMweCiQ1_AwRhg" class="btn btn-sm btn-outline-primary">Read More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="related-post-card">
+                                <h5>Optimization Techniques for Modern Statistical Models</h5>
+                                <p class="text-muted"><i class="far fa-calendar-alt mr-2"></i>September 12, 2024</p>
+                                <p>Advanced optimization methods for complex statistical inference problems.</p>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Coming Soon</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 My Stylish Blog</p>
-    </footer>
-
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="social-icons mb-3">
+                <a href="mailto:lilikang@uic.edu.cn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/likangmax" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.zhihu.com/people/likang_li" target="_blank" rel="noopener" aria-label="Zhihu"><i class="fab fa-zhihu"></i></a>
+            </div>
+            <p>&copy; 2024 Likang Li. All rights reserved.</p>
+        </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script>
-        // Markdown 博客内容
-        const markdownContent = `
-# My First Stylish Blog Post
-This is a sample **Markdown** blog post.
+    // 博客内容 - 使用Markdown格式，将通过marked.js渲染
+    const blogContent = `
+# Statistical Computing: New Frontiers
 
-## Section 1
-Some interesting text goes here.
+In the rapidly evolving landscape of data science and computational statistics, new methodologies and tools continue to emerge that are reshaping how we approach large-scale data analysis. This blog explores recent advancements in statistical computing and their real-world applications across various domains.
 
-### Subsection 1.1
-Even more interesting stuff here.
+## The Evolution of Statistical Computing
 
-- List item 1
-- List item 2
-- List item 3
+The field of statistical computing has undergone significant transformation over the past decade. From traditional methods that could handle only modest datasets to today's sophisticated algorithms capable of processing petabytes of information, the journey has been remarkable.
 
-## Section 2
-Here's some code:
+### Historical Perspective
 
-\`\`\`python
-def greet(name):
-    return f"Hello, {name}!"
+Statistical computing began with simple numerical algorithms implemented on early computers. These methods were limited by hardware constraints but laid the foundation for more complex approaches:
 
-print(greet("World"))
+- **1950s-1960s**: Early numerical methods and Monte Carlo simulations
+- **1970s-1980s**: Development of statistical packages like SAS and SPSS
+- **1990s-2000s**: Object-oriented statistical software and the emergence of R
+- **2010s-Present**: Distributed computing frameworks, GPU acceleration, and cloud-based solutions
+
+The exponential growth in data volume and complexity has driven these advancements, pushing researchers to develop more efficient computational strategies.
+
+## Modern Statistical Computing Frameworks
+
+Today's statistical computing landscape is characterized by several powerful frameworks designed for specific types of challenges:
+
+### 1. Scalable Bayesian Computation
+
+Bayesian methods have traditionally been computationally intensive, limiting their application to large datasets. Recent advances have addressed this challenge:
+
+\`\`\`r
+# Example of Stan code for efficient Bayesian modeling
+model {
+  // Priors
+  alpha ~ normal(0, 10);
+  beta ~ normal(0, 10);
+  sigma ~ exponential(1);
+  
+  // Likelihood
+  y ~ normal(alpha + beta * x, sigma);
+}
 \`\`\`
 
-## Links
-- [GitHub](https://github.com/)
-- [OpenAI](https://openai.com/)
+Innovations like Hamiltonian Monte Carlo and variational inference have made complex hierarchical Bayesian models feasible for big data scenarios.
 
-### Images
-![Markdown Logo](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
+### 2. Distributed Statistical Learning
+
+Frameworks that distribute computational workload across multiple nodes have become essential for handling massive datasets:
+
+\`\`\`python
+# PySpark example for distributed data processing
+from pyspark.ml.regression import LinearRegression
+
+# Create a LinearRegression instance
+lr = LinearRegression(maxIter=10, regParam=0.3, elasticNetParam=0.8)
+
+# Fit the model
+model = lr.fit(training_data)
+
+# Make predictions
+predictions = model.transform(test_data)
+\`\`\`
+
+Technologies like Apache Spark have democratized distributed computing, allowing statisticians to implement complex models across clusters of machines.
+
+## Applications in Modern Research
+
+These computational advancements have enabled breakthroughs across numerous fields:
+
+### Genomics and Bioinformatics
+
+Modern statistical computing has revolutionized genomics research. With next-generation sequencing generating terabytes of data, researchers can now:
+
+- Identify subtle genetic variations across populations
+- Model complex gene-environment interactions
+- Simulate evolutionary processes with unprecedented detail
+
+A recent study used distributed Bayesian computation to analyze over 500,000 genomes, identifying novel genetic markers associated with longevity.
+
+### Climate Science
+
+Climate models have benefited tremendously from advancements in statistical computing:
+
+- Ensemble modeling techniques that quantify prediction uncertainty
+- Spatial-temporal models that capture complex environmental interactions
+- Extreme value analysis for rare climate events
+
+These methods help climate scientists make more accurate predictions and better understand climate change patterns.
+
+## Challenges and Future Directions
+
+Despite significant progress, several challenges remain:
+
+1. **Interpretability**: As models become more complex, ensuring their interpretability becomes increasingly difficult
+2. **Privacy**: Statistical analysis of sensitive data requires robust privacy-preserving techniques
+3. **Reproducibility**: Ensuring computational reproducibility across different platforms remains challenging
+
+The future of statistical computing will likely focus on addressing these challenges while further improving computational efficiency.
 
 ## Conclusion
-Hope you enjoyed this post!
-        `;
 
-        // 使用 Marked.js 将 Markdown 转换为 HTML
-        document.getElementById('blog-content').innerHTML = marked.parse(markdownContent);
+The frontiers of statistical computing continue to expand, enabling researchers to tackle previously intractable problems. As hardware capabilities and algorithmic innovations progress, we can expect even more powerful tools to emerge for extracting meaningful insights from complex data.
+
+The integration of statistical computing with other fields like artificial intelligence and quantum computing presents exciting opportunities for future research and applications.
+`;
+
+    (function() {
+        // 渲染Markdown内容
+        document.getElementById('blog-content').innerHTML = marked.parse(blogContent);
+        
+        // 初始化主题
+        const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const storedTheme = localStorage.getItem('theme');
+        const currentTheme = storedTheme || (prefersDarkMode ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        // 主题切换功能
+        const themeSwitch = document.getElementById('theme-switch');
+        updateThemeIcon(currentTheme);
+        themeSwitch.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            const icon = themeSwitch.querySelector('i');
+            if (theme === 'dark') {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+        }
+        
+        // 回到顶部按钮
+        const backToTopButton = document.getElementById('back-to-top');
+        const scrollThreshold = 300;
+        
+        function handleScroll() {
+            if (window.pageYOffset > scrollThreshold) {
+                if (!backToTopButton.classList.contains('visible')) {
+                    backToTopButton.classList.add('visible');
+                }
+            } else {
+                if (backToTopButton.classList.contains('visible')) {
+                    backToTopButton.classList.remove('visible');
+                }
+            }
+        }
+        
+        // 节流滚动事件以提高性能
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            if (!scrollTimeout) {
+                scrollTimeout = setTimeout(function() {
+                    handleScroll();
+                    scrollTimeout = null;
+                }, 100);
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0, 
+                behavior: 'smooth'
+            });
+        });
+    })();
     </script>
 </body>
 </html>

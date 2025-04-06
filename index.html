@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c5282">
     <title>Likang Li - Academic Homepage</title>
     <meta name="description" content="Likang Li's academic homepage - PhD student at Beijing Normal-Hong Kong Baptist University">
     <link rel="preload" href="pic/us.jpg" as="image">
@@ -12,180 +13,209 @@
     <noscript>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-    </noscript>    
+    </noscript>
+    <!-- 结构化数据 - 提升SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Likang Li",
+        "jobTitle": "PhD Student",
+        "affiliation": {
+            "@type": "Organization",
+            "name": "Beijing Normal-Hong Kong Baptist University"
+        },
+        "sameAs": "https://www.zhihu.com/people/likang_li"
+    }
+    </script>
     <style>
     /* Modern color palette with professional tones */
     :root {
-        /* Primary color scheme - deep blue with subtle accents */
-        --primary: #2c5282;
+        /* Primary color scheme - refined blue with subtle accents */
+        --primary: #2b6cb0;
         --primary-dark: #1a365d;
         --primary-light: #4299e1;
-        --accent: #805ad5;
+        --accent: #6b46c1;
         
-        /* Text and background */
+        /* Text and background - improved contrast */
         --text: #2d3748;
-        --text-light: #718096;
-        --text-muted: #a0aec0;
+        --text-light: #4a5568;
+        --text-muted: #718096;
         --bg: #ffffff;
         --bg-card: #ffffff;
-        --bg-alt: #f7fafc;
+        --bg-alt: #f8fafc;
         
-        /* UI elements */
+        /* UI elements - more refined */
         --border: #e2e8f0;
-        --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-        --shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
-        --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.05);
-        --radius: 0.5rem;
-        --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
+        --shadow: 0 4px 8px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.06);
+        --shadow-lg: 0 12px 20px -3px rgba(0,0,0,0.06), 0 4px 8px -2px rgba(0,0,0,0.05);
+        --radius: 0.6rem;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         
-        /* Font settings */
+        /* Font settings - more academic */
         --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
-
+    
+    /* Dark mode theme - more sophisticated */
     [data-theme="dark"] {
-        /* Dark mode - elegant deep blues and purples */
         --primary: #63b3ed;
         --primary-dark: #2b6cb0;
         --primary-light: #90cdf4;
         --accent: #b794f4;
         
-        /* Text and background */
+        /* Text and background - better contrast */
         --text: #f7fafc;
         --text-light: #e2e8f0;
         --text-muted: #a0aec0;
-        --bg: #1a202c;
+        --bg: #171923;
         --bg-card: #2d3748;
         --bg-alt: #2d3748;
         
-        /* UI elements */
+        /* UI elements - refined for dark mode */
         --border: #4a5568;
-        --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
-        --shadow: 0 4px 6px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.3);
-        --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.2), 0 4px 6px -2px rgba(0,0,0,0.2);
+        --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
+        --shadow: 0 4px 8px rgba(0,0,0,0.25), 0 2px 4px rgba(0,0,0,0.3);
+        --shadow-lg: 0 12px 20px -3px rgba(0,0,0,0.3), 0 4px 8px -2px rgba(0,0,0,0.25);
     }
-
-    /* Base styles */
+    
+    /* Base styles - improved typography */
     html {
         scroll-behavior: smooth;
         scroll-padding-top: 80px;
     }
-
+    
     body {
         font-family: var(--font-sans);
         background: var(--bg);
         color: var(--text);
-        line-height: 1.7;
+        line-height: 1.8;
         transition: var(--transition);
         padding-top: 80px;
         font-weight: 400;
-        letter-spacing: -0.011em;
+        letter-spacing: -0.01em;
     }
-
-    /* Typography refinements */
+    
+    /* Typography refinements - more academic */
     h1, h2, h3, h4, h5, h6 {
         font-weight: 600;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.025em;
         line-height: 1.3;
-        color: var(--text);
+        color: var (--text);
+        margin-bottom: 1rem;
     }
-
-    /* Navigation */
+    
+    /* Navigation - more sophisticated */
     .navbar {
         background: var(--bg);
         box-shadow: var(--shadow);
         border-bottom: 1px solid var(--border);
         transition: var(--transition);
-        padding: 0.75rem 1rem;
+        padding: 0.75rem 1.25rem;
     }
-
+    
     .navbar-brand {
         font-weight: 700;
         color: var(--primary) !important;
         letter-spacing: -0.02em;
         font-size: 1.25rem;
     }
-
+    
     .navbar-nav .nav-link {
         color: var(--text) !important;
         font-weight: 500;
         padding: 0.5rem 1rem;
         transition: var(--transition);
         border-radius: var(--radius);
-        margin: 0 0.25rem;
+        margin: 0 0.3rem;
     }
-
+    
     .navbar-nav .nav-link:hover {
         color: var(--primary) !important;
         background: var(--bg-alt);
+        transform: translateY(-1px);
     }
-
-    .navbar-toggler {
-        border: none;
-        padding: 0.5rem;
-    }
-
-    .navbar-toggler:focus {
-        outline: none;
-        box-shadow: none;
-    }
-
-    /* Header section */
+    
+    /* Header section - more refined */
     .header {
         text-align: center;
-        margin-bottom: 3rem;
-        padding-top: 2rem;
+        margin-bottom: 3.5rem;
+        padding-top: 2.5rem;
     }
-
+    
     .header h1 {
-        font-size: 2.5rem;
-        margin: 1rem 0 0.5rem;
+        font-size: 2.75rem;
+        margin: 1.2rem 0 0.6rem;
         color: var(--primary);
         font-weight: 700;
+        letter-spacing: -0.03em;
     }
-
+    
     .header p {
-        font-size: 1.125rem;
+        font-size: 1.2rem;
         color: var(--text-light);
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+        letter-spacing: -0.01em;
     }
-
+    
     .header img {
         max-width: 100%;
         height: auto;
-        max-height: 300px;
+        max-height: 420px;
         border-radius: var(--radius);
         box-shadow: var(--shadow-lg);
         transition: var(--transition);
         object-fit: cover;
     }
-
+    
     .header img:hover {
         transform: translateY(-5px);
-        box-shadow: var(--shadow-lg), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--shadow-lg), 0 22px 28px -8px rgba(0, 0, 0, 0.12);
     }
-
-    /* Content sections */
-    .content h2 {
-        margin-top: 3rem;
-        margin-bottom: 1.5rem;
-        font-size: 1.75rem;
-        color: var(--primary);
+    
+    /* 优化图片容器 */
+    .profile-img-container {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
         position: relative;
-        padding-bottom: 0.75rem;
     }
-
+    
+    .profile-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+    
+    /* Content sections - more academic */
+    .content h2 {
+        margin-top: 3.5rem;
+        margin-bottom: 1.75rem;
+        font-size: 1.9rem;
+        color: var (--primary);
+        position: relative;
+        padding-bottom: 0.85rem;
+        font-weight: 600;
+    }
+    
     .content h2::after {
         content: '';
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 3rem;
+        width: 3.5rem;
         height: 3px;
         background: var(--primary);
         border-radius: 2px;
     }
-
-    /* Cards */
+    
+    /* Cards - refined design */
     .card {
         background: var(--bg-card);
         border: 1px solid var(--border);
@@ -195,40 +225,44 @@
         overflow: hidden;
         height: 100%;
     }
-
+    
     .card:hover {
-        transform: translateY(-4px);
+        transform: translateY(-5px);
         box-shadow: var(--shadow-lg);
         border-color: var(--primary-light);
     }
-
+    
     .card-body {
-        padding: 1.5rem;
+        padding: 2rem;
     }
-
-    /* Research interests cards */
+    
+    /* Research interests cards - more academic */
     .interest-card {
         border-left: 4px solid var(--primary);
         transition: var(--transition);
+        background-color: var(--bg-alt);
     }
-
+    
     .interest-card:hover {
         border-left-color: var(--accent);
+        transform: translateY(-5px) translateX(3px);
     }
-
+    
     .interest-card h5 {
         color: var(--primary);
         font-weight: 600;
         display: flex;
         align-items: center;
-        margin-bottom: 1rem;
+        margin-bottom: 1.4rem;
+        letter-spacing: -0.02em;
     }
-
+    
     .interest-card h5 i {
-        margin-right: 0.75rem;
+        margin-right: 1rem;
         color: var(--primary);
+        font-size: 1.1rem;
     }
-
+    
     /* Links */
     a {
         color: var(--primary);
@@ -236,12 +270,16 @@
         transition: var(--transition);
         font-weight: 500;
     }
-
+    
     a:hover {
         color: var(--primary-light);
         text-decoration: none;
     }
-
+    
+    .publication-entry:last-child {
+        padding-bottom: 1.2rem;
+    }
+    
     /* Footer */
     .footer {
         margin-top: 4rem;
@@ -251,7 +289,7 @@
         border-top: 1px solid var(--border);
         text-align: center;
     }
-
+    
     /* Theme switch */
     .theme-switch {
         position: fixed;
@@ -270,17 +308,17 @@
         cursor: pointer;
         transition: var(--transition);
     }
-
+    
     .theme-switch:hover {
         transform: scale(1.05);
         box-shadow: var(--shadow-lg);
     }
-
+    
     .theme-switch i {
         color: var(--primary);
         font-size: 1.25rem;
     }
-
+    
     /* Back to top button */
     .back-to-top {
         position: fixed;
@@ -300,20 +338,20 @@
         transition: var(--transition);
         z-index: 1000;
         border: none;
-        box-shadow: var(--shadow);
+        box-shadow: var (--shadow);
     }
-
+    
     .back-to-top.visible {
         opacity: 0.9;
         visibility: visible;
     }
-
+    
     .back-to-top:hover {
         opacity: 1;
         transform: translateY(-3px);
         box-shadow: var(--shadow-lg);
     }
-
+    
     /* Loading spinner */
     .loader {
         position: fixed;
@@ -328,12 +366,12 @@
         align-items: center;
         transition: opacity 0.4s ease, visibility 0.4s ease;
     }
-
+    
     .loader.hidden {
         opacity: 0;
         visibility: hidden;
     }
-
+    
     .spinner {
         width: 40px;
         height: 40px;
@@ -342,59 +380,100 @@
         border-top-color: var(--primary);
         animation: spin 0.8s ease-in-out infinite;
     }
-
+    
     [data-theme="dark"] .spinner {
         border-color: rgba(255,255,255,0.1);
         border-top-color: var(--primary);
     }
-
+    
     @keyframes spin {
         to { transform: rotate(360deg); }
     }
-
-    /* Social icons */
+    
+    /* Social icons - more engaging */
     .social-icons {
         display: flex;
         justify-content: center;
-        gap: 1.5rem;
-        margin: 1rem 0;
+        gap: 2rem;
+        margin: 1.5rem 0;
     }
-
+    
     .social-icons a {
         color: var(--text-light);
-        font-size: 1.25rem;
+        font-size: 1.4rem;
         transition: var(--transition);
     }
-
+    
     .social-icons a:hover {
         color: var(--primary);
-        transform: translateY(-3px);
+        transform: translateY(-4px);
     }
-
-    /* Contact info */
+    
+    /* Contact info - more elegant */
     .contact-info {
-        line-height: 2;
+        line-height: 2.2;
+        font-size: 1.05rem;
     }
-
+    
     .contact-info i {
-        width: 1.5rem;
+        width: 1.75rem;
         text-align: center;
-        margin-right: 0.75rem;
-        color: var(--primary);
+        margin-right: 1rem;
+        color: var (--primary);
     }
-
-    /* Animations */
+    
+    /* Animations - smoother */
     [data-aos] {
         opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+        transform: translateY(25px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
     }
-
+    
     [data-aos].aos-animate {
         opacity: 1;
         transform: translateY(0);
     }
-
+    
+    /* Publication styling */
+    .publication-entry {
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--border);
+        transition: var(--transition);
+    }
+    
+    .publication-entry:hover {
+        background-color: var(--bg-alt);
+        padding-left: 1rem;
+        border-radius: var(--radius);
+    }
+    
+    .publication-entry:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    
+    /* Blog card enhancement */
+    #blog .card h4 {
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        transition: var(--transition);
+    }
+    
+    #blog .card:hover h4 {
+        color: var(--primary);
+    }
+    
+    #blog .btn {
+        transition: all 0.3s ease;
+        border-radius: 20px;
+        padding: 0.4rem 1.2rem;
+    }
+    
+    #blog .btn:hover {
+        transform: translateX(5px);
+        box-shadow: var(--shadow);
+    }
+    
     /* Responsive adjustments */
     @media (max-width: 991.98px) {
         .theme-switch {
@@ -402,7 +481,7 @@
             right: 5rem;
         }
     }
-
+    
     @media (max-width: 767.98px) {
         body {
             padding-top: 76px;
@@ -420,11 +499,27 @@
             font-size: 1.5rem;
         }
     }
+    
+    /* 打印样式优化 */
+    @media print {
+        .back-to-top, .theme-switch, .footer {
+            display: none !important;
+        }
+        
+        a {
+            text-decoration: underline;
+        }
+        
+        .card {
+            box-shadow: none;
+            border: 1px solid #ddd;
+        }
+    }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" role="navigation" aria-label="Main navigation">
         <div class="container">
             <a class="navbar-brand" href="#">Likang Li</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -444,66 +539,65 @@
             </div>
         </div>
     </nav>
-
+    
     <!-- Theme Switch -->
     <div class="theme-switch" id="theme-switch" aria-label="Switch theme">
         <i class="fas fa-moon"></i>
     </div>
-
+        
     <div class="container">
         <!-- Header -->
-        <div class="header" data-aos>
-            <img src="pic/us.jpg" alt="Likang Li">
+        <div class="header" data-aos role="banner">
+            <div class="profile-img-container">
+                <img src="pic/us.jpg" alt="Likang Li">
+            </div>
             <h1>Likang Li</h1>
             <p>PhD Student | Beijing Normal-Hong Kong Baptist University</p>
-            
             <div class="social-icons">
                 <a href="mailto:lilikang@uic.edu.cn" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 <a href="https://github.com/likangmax" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://www.zhihu.com/people/likang_li" target="_blank" rel="noopener" aria-label="Zhihu"><i class="fab fa-zhihu"></i></a>
             </div>
         </div>
-
-        <div class="content">
+        
+        <div class="content" role="main">
             <!-- Bio -->
-            <div id="Bio" data-aos>
-                <h2>Biography</h2>
+            <div id="Bio" data-aos aria-labelledby="bio-heading">
+                <h2 id="bio-heading">Biography</h2>
                 <div class="card mb-4">
                     <div class="card-body">
                         <p>
                             I am a PhD student in Probability and Mathematical Statistics at Beijing Normal-Hong Kong Baptist University, supervised by 
                             <a href="https://fst.uic.edu.cn/en/faculty/faculty.htm#/jianxinpan/en" target="_blank" rel="noopener">Prof. Jianxin Pan</a>. 
-                            Prior to joining BNBU, I received my Master's degree from Hong Kong Baptist University (HKBU) and Bachelor's degree from Henan University.
+                            I received my Master's degree from Hong Kong Baptist University and Bachelor's degree from Henan University.
                         </p>
                         <p>
-                            My research focuses on developing efficient computational methods for complex statistical models, with particular emphasis on:
+                            My research focuses on computational statistics and machine learning:
                         </p>
                         <ul>
-                            <li>High-performance algorithms for large-scale statistical computing</li>
-                            <li>Optimization methods in statistical inference</li>
-                            <li>Statistical software development (R packages)</li>
-                            <li>Applications in medical data analysis and bioinformatics</li>
+                            <li>Scalable algorithms for high-dimensional statistical computing</li>
+                            <li>Statistical methods for large language models</li>
+                            <li>Applications in healthcare analytics and biomedical informatics</li>
                         </ul>
                         <p>
-                            I am passionate about bridging theoretical advances with practical applications through innovative computational solutions.
-                            Outside of research, I enjoy running 🏃 and swimming 🏊. Feel free to reach out for academic collaborations or discussions!
+                            Beyond academia, I enjoy long-distance running 🏃‍♂️ and swimming 🏊‍♂️, which complement my research philosophy of persistence and precision.
                         </p>
                     </div>
                 </div>
             </div>
-
+            
             <!-- Research Interests -->
-            <div id="research" data-aos>
-                <h2>Research Interests</h2>
+            <div id="research" data-aos aria-labelledby="research-heading">
+                <h2 id="research-heading">Research Interests</h2>
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card interest-card h-100">
                             <div class="card-body">
-                                <h5><i class="fas fa-chart-line"></i>Statistical Computing</h5>
+                                <h5><i class="fas fa-brain"></i>Large Language Model Fine-tuning</h5>
                                 <ul class="mb-0">
-                                    <li>Large-scale statistical computation optimization</li>
-                                    <li>Efficient algorithms for complex statistical models</li>
-                                    <li>High-dimensional data analysis methods</li>
+                                    <li>Statistical Methods for LLM Training</li>
+                                    <li>Efficient Parameter Estimation and Optimization</li>
+                                    <li>Model Adaptation in Low-resource Settings</li>
                                 </ul>
                             </div>
                         </div>
@@ -511,11 +605,11 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card interest-card h-100">
                             <div class="card-body">
-                                <h5><i class="fas fa-code"></i>Software Development</h5>
+                                <h5><i class="fas fa-code"></i>Statistical Software Development</h5>
                                 <ul class="mb-0">
-                                    <li>R package development for statistical methods</li>
-                                    <li>High-performance computing tools</li>
-                                    <li>User-friendly statistical interfaces</li>
+                                    <li>R Packages for Large-scale Data Analysis</li>
+                                    <li>Implementation of Statistical Models</li>
+                                    <li>Interactive Data Visualization Tools</li>
                                 </ul>
                             </div>
                         </div>
@@ -523,25 +617,25 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card interest-card h-100">
                             <div class="card-body">
-                                <h5><i class="fas fa-heartbeat"></i>Biostatistics</h5>
+                                <h5><i class="fas fa-heartbeat"></i>LLMs in Healthcare</h5>
                                 <ul class="mb-0">
-                                    <li>Clinical trial data analysis</li>
-                                    <li>Medical imaging statistics</li>
-                                    <li>Healthcare data modeling</li>
+                                    <li>Medical Diagnostic Support Systems</li>
+                                    <li>Medical Imaging and Clinical Text Analysis</li>
+                                    <li>Healthcare Data Privacy and Interpretability</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            
             <!-- Publications -->
-            <div id="publications" data-aos>
-                <h2>Publications</h2>
+            <div id="publications" data-aos aria-labelledby="publications-heading">
+                <h2 id="publications-heading">Publications</h2>
                 <div class="card mb-4">
                     <div class="card-body">
                         <ul class="mb-0 list-unstyled">
-                            <li class="mb-3">
+                            <li class="mb-3 publication-entry">
                                 <strong>Li, L.</strong>, Author2, and Author3. (Year). "Title of the Paper." <em>Journal Name</em>. 
                                 <div class="mt-2">
                                     <a href="#" class="btn btn-sm btn-outline-primary mr-2"><i class="fas fa-file-pdf mr-1"></i> PDF</a>
@@ -552,44 +646,26 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- Teaching -->
-            <div id="teaching" data-aos>
-                <h2>Teaching Experience</h2>
+            <div id="teaching" data-aos aria-labelledby="teaching-heading">
+                <h2 id="teaching-heading">Teaching Experience</h2>
                 <div class="card mb-4">
                     <div class="card-body">
                         <h4 class="mb-3">Teaching Assistant</h4>
                         <p><strong>Beijing Normal-Hong Kong Baptist University</strong> (2022-Present)</p>
                         <ul class="mb-0">
-                            <li class="mb-3">
-                                <strong>Linear Algebra</strong>
-                                <ul>
-                                    <li>Led weekly tutorial sessions and provided one-on-one student support</li>
-                                    <li>Developed supplementary learning materials and practice problems</li>
-                                </ul>
-                            </li>
-                            <li class="mb-3">
-                                <strong>Sampling Survey</strong>
-                                <ul>
-                                    <li>Assisted with course material preparation and grading</li>
-                                    <li>Conducted practical workshops on survey methodology</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <strong>Business Analytics</strong>
-                                <ul>
-                                    <li>Guided students through data analysis projects</li>
-                                    <li>Facilitated hands-on sessions using statistical software</li>
-                                </ul>
-                            </li>
+                            <li class="mb-2"><strong>Linear Algebra</strong> - Weekly tutorials and student support</li>
+                            <li class="mb-2"><strong>Sampling Survey</strong> - Course materials and practical workshops</li>
+                            <li class="mb-2"><strong>Business Analytics</strong> - Data analysis project guidance</li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+            
             <!-- Awards -->
-            <div id="awards" data-aos>
-                <h2>Awards & Honors</h2>
+            <div id="awards" data-aos aria-labelledby="awards-heading">
+                <h2 id="awards-heading">Awards & Honors</h2>
                 <div class="card mb-4">
                     <div class="card-body">
                         <ul class="mb-0">
@@ -598,25 +674,50 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- Blog -->
-            <div id="blog" data-aos>
-                <h2>Blog</h2>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h4 class="mb-2" style="color:var(--primary);">Understanding Self-Attention in Transformer Models</h4>
-                        <p class="text-muted mb-3"><i class="far fa-calendar-alt mr-2"></i>November 15, 2024</p>
-                        <p>A comprehensive exploration of the self-attention mechanism in Transformer architectures, discussing its mathematical foundations and practical implementations.</p>
-                        <a href="https://mp.weixin.qq.com/s/_VuS6j21dMweCiQ1_AwRhg" target="_blank" rel="noopener" class="btn btn-outline-primary">
-                            Read More <i class="fas fa-arrow-right ml-1"></i>
-                        </a>
+            <div id="blog" data-aos aria-labelledby="blog-heading">
+                <h2 id="blog-heading">Blog & Insights</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h4 class="mb-2">Understanding Self-Attention in Transformer Models</h4>
+                                <p class="text-muted mb-3"><i class="far fa-calendar-alt mr-2"></i>November 15, 2024</p>
+                                <div class="mb-3">
+                                    <span class="badge badge-light mr-2">Deep Learning</span>
+                                    <span class="badge badge-light mr-2">NLP</span>
+                                    <span class="badge badge-light">Transformers</span>
+                                </div>
+                                <p>A comprehensive exploration of the self-attention mechanism in Transformer architectures, discussing its mathematical foundations and practical implementations.</p>
+                                <a href="https://mp.weixin.qq.com/s/_VuS6j21dMweCiQ1_AwRhg" target="_blank" rel="noopener" class="btn btn-outline-primary mt-auto">
+                                    Read More <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h4 class="mb-2">Statistical Computing: New Frontiers</h4>
+                                <p class="text-muted mb-3"><i class="far fa-calendar-alt mr-2"></i>October 3, 2024</p>
+                                <div class="mb-3">
+                                    <span class="badge badge-light mr-2">Statistical Computing</span>
+                                    <span class="badge badge-light">Big Data</span>
+                                </div>
+                                <p>Exploring recent advancements in statistical computing methods for large-scale data analysis and their applications in modern research.</p>
+                                <a href="blog/blog01.html" target="_blank" rel="noopener" class="btn btn-outline-primary mt-auto">
+                                    Read More <i class="fas fa-arrow-right ml-1"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
+            
             <!-- Contact -->
-            <div id="contact" data-aos>
-                <h2>Contact</h2>
+            <div id="contact" data-aos aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Contact</h2>
                 <div class="card mb-4">
                     <div class="card-body">
                         <p class="contact-info">
@@ -628,25 +729,25 @@
                 </div>
             </div>
         </div>
-
-        <div class="footer">
+        
+        <div class="footer" role="contentinfo">
             <p>&copy; 2025 Likang Li. All rights reserved.</p>
         </div>
     </div>
-
+    
     <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
-
+    
     <!-- Loading Spinner -->
-    <div class="loader">
+    <div class="loader" aria-hidden="true">
         <div class="spinner"></div>
     </div>
-
+    
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" defer></script>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script>
     (function() {
         // Initialize theme
@@ -658,11 +759,9 @@
         // Theme switch functionality
         const themeSwitch = document.getElementById('theme-switch');
         updateThemeIcon(currentTheme);
-        
         themeSwitch.addEventListener('click', function() {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeIcon(newTheme);
@@ -677,50 +776,52 @@
             }
         }
         
-        // Initialize animations with Intersection Observer
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('aos-animate');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { 
-            threshold: 0.1,
-            rootMargin: '0px 0px -10% 0px'
-        });
-        
-        document.querySelectorAll('[data-aos]').forEach(element => {
-            observer.observe(element);
-        });
-        
-        // Smooth scrolling with improved UX
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    const navbarCollapse = document.querySelector('.navbar-collapse');
-                    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                        document.querySelector('.navbar-toggler').click();
-                    }
-                    
-                    // Smooth scroll with offset for navbar
-                    const headerOffset = 90;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
+        // Defer non-critical functions
+        function deferredInit() {
+            // Initialize animations with Intersection Observer
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('aos-animate');
+                            observer.unobserve(entry.target);
+                        }
                     });
-                }
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -10% 0px'
+                });
+                document.querySelectorAll('[data-aos]').forEach(element => {
+                    observer.observe(element);
+                });
+            }
+            
+            // Smooth scrolling with improved UX
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Close mobile menu if open
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                            document.querySelector('.navbar-toggler').click();
+                        }
+                        
+                        // Smooth scroll with offset for navbar
+                        const headerOffset = 90;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
-        });
+        }
         
         // Back to top button
         const backToTopButton = document.getElementById('back-to-top');
@@ -751,7 +852,7 @@
         
         backToTopButton.addEventListener('click', function() {
             window.scrollTo({
-                top: 0,
+                top: 0, 
                 behavior: 'smooth'
             });
         });
@@ -760,6 +861,8 @@
         window.addEventListener('load', function() {
             setTimeout(function() {
                 document.querySelector('.loader').classList.add('hidden');
+                // 页面加载完成后初始化延迟加载的功能
+                deferredInit();
             }, 300);
         });
         
@@ -767,6 +870,7 @@
         if (document.readyState === 'complete' || document.readyState === 'interactive') {
             setTimeout(function() {
                 document.querySelector('.loader').classList.add('hidden');
+                deferredInit();
             }, 300);
         }
     })();
