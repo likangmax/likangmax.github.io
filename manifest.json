@@ -1,0 +1,40 @@
+{
+  "name": "Likang Li - Academic Homepage",
+  "short_name": "Likang Li",
+  "description": "Likang Li's academic homepage - PhD student at Beijing Normal-Hong Kong Baptist University",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2c5282",
+  "icons": [
+    {
+      "src": "./pic/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./pic/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Research",
+      "url": "./index.html#research",
+      "description": "View my research interests"
+    },
+    {
+      "name": "Publications",
+      "url": "./index.html#publications",
+      "description": "View my publications"
+    },
+    {
+      "name": "Contact",
+      "url": "./index.html#contact",
+      "description": "Contact me"
+    }
+  ]
+} 

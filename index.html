@@ -6,14 +6,17 @@
     <meta name="theme-color" content="#2c5282">
     <title>Likang Li - Academic Homepage</title>
     <meta name="description" content="Likang Li's academic homepage - PhD student at Beijing Normal-Hong Kong Baptist University">
-    <link rel="preload" href="pic/us.jpg" as="image">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-    </noscript>
+    
+    <!-- 网站图标 -->
+    <link rel="icon" href="pic/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="pic/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- 直接加载关键CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    
     <!-- 结构化数据 - 提升SEO -->
     <script type="application/ld+json">
     {
@@ -25,58 +28,62 @@
             "@type": "Organization",
             "name": "Beijing Normal-Hong Kong Baptist University"
         },
-        "sameAs": "https://www.zhihu.com/people/likang_li"
+        "sameAs": [
+            "https://www.zhihu.com/people/likang_li",
+            "https://github.com/likangmax"
+        ],
+        "url": "https://likangmax.github.io"
     }
     </script>
     <style>
     /* Modern color palette with professional tones */
     :root {
-        /* Primary color scheme - refined blue with subtle accents */
-        --primary: #2b6cb0;
-        --primary-dark: #1a365d;
-        --primary-light: #4299e1;
-        --accent: #6b46c1;
+        /* 优化简约配色方案 */
+        --primary: #3182ce;
+        --primary-dark: #2c5282;
+        --primary-light: #63b3ed;
+        --accent: #805ad5;
         
-        /* Text and background - improved contrast */
-        --text: #2d3748;
+        /* 精简文本和背景色 */
+        --text: #1a202c;
         --text-light: #4a5568;
         --text-muted: #718096;
         --bg: #ffffff;
         --bg-card: #ffffff;
-        --bg-alt: #f8fafc;
+        --bg-alt: #f7fafc;
         
-        /* UI elements - more refined */
+        /* 简化阴影 */
         --border: #e2e8f0;
-        --shadow-sm: 0 2px 4px rgba(0,0,0,0.04);
-        --shadow: 0 4px 8px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.06);
-        --shadow-lg: 0 12px 20px -3px rgba(0,0,0,0.06), 0 4px 8px -2px rgba(0,0,0,0.05);
-        --radius: 0.6rem;
-        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --shadow-sm: 0 1px 2px rgba(0,0,0,0.03);
+        --shadow: 0 2px 4px rgba(0,0,0,0.03);
+        --shadow-lg: 0 4px 8px rgba(0,0,0,0.05);
+        --radius: 0.4rem;
+        --transition: all 0.2s ease;
         
-        /* Font settings - more academic */
+        /* 字体设置 */
         --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     }
     
-    /* Dark mode theme - more sophisticated */
+    /* Dark mode theme */
     [data-theme="dark"] {
         --primary: #63b3ed;
         --primary-dark: #2b6cb0;
         --primary-light: #90cdf4;
-        --accent: #b794f4;
+        --accent: #9f7aea;
         
-        /* Text and background - better contrast */
+        /* 改进深色主题对比度 */
         --text: #f7fafc;
         --text-light: #e2e8f0;
         --text-muted: #a0aec0;
-        --bg: #171923;
+        --bg: #1a202c;
         --bg-card: #2d3748;
         --bg-alt: #2d3748;
         
-        /* UI elements - refined for dark mode */
+        /* 简化深色主题阴影 */
         --border: #4a5568;
-        --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
-        --shadow: 0 4px 8px rgba(0,0,0,0.25), 0 2px 4px rgba(0,0,0,0.3);
-        --shadow-lg: 0 12px 20px -3px rgba(0,0,0,0.3), 0 4px 8px -2px rgba(0,0,0,0.25);
+        --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+        --shadow: 0 2px 4px rgba(0,0,0,0.2);
+        --shadow-lg: 0 4px 6px rgba(0,0,0,0.2);
     }
     
     /* Base styles - improved typography */
@@ -89,123 +96,108 @@
         font-family: var(--font-sans);
         background: var(--bg);
         color: var(--text);
-        line-height: 1.8;
+        line-height: 1.7;
         transition: var(--transition);
-        padding-top: 80px;
+        padding-top: 70px; /* 减小顶部导航栏空间 */
         font-weight: 400;
         letter-spacing: -0.01em;
     }
     
-    /* Typography refinements - more academic */
+    /* Typography refinements */
     h1, h2, h3, h4, h5, h6 {
         font-weight: 600;
-        letter-spacing: -0.025em;
+        letter-spacing: -0.02em;
         line-height: 1.3;
-        color: var (--text);
+        color: var(--text);
         margin-bottom: 1rem;
     }
     
-    /* Navigation - more sophisticated */
+    /* Navigation - simplified */
     .navbar {
         background: var(--bg);
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-sm);
         border-bottom: 1px solid var(--border);
         transition: var(--transition);
-        padding: 0.75rem 1.25rem;
+        padding: 0.6rem 1rem;
     }
     
     .navbar-brand {
-        font-weight: 700;
+        font-weight: 600;
         color: var(--primary) !important;
         letter-spacing: -0.02em;
-        font-size: 1.25rem;
+        font-size: 1.2rem;
     }
     
     .navbar-nav .nav-link {
         color: var(--text) !important;
         font-weight: 500;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.8rem;
         transition: var(--transition);
         border-radius: var(--radius);
-        margin: 0 0.3rem;
+        margin: 0 0.2rem;
+        font-size: 0.95rem;
     }
     
     .navbar-nav .nav-link:hover {
         color: var(--primary) !important;
         background: var(--bg-alt);
-        transform: translateY(-1px);
+        transform: none;
     }
     
-    /* Header section - more refined */
+    /* Header section - simplified */
     .header {
         text-align: center;
-        margin-bottom: 3.5rem;
-        padding-top: 2.5rem;
+        margin-bottom: 3rem;
+        padding-top: 2rem;
     }
     
     .header h1 {
-        font-size: 2.75rem;
-        margin: 1.2rem 0 0.6rem;
+        font-size: 2.5rem;
+        margin: 1rem 0 0.5rem;
         color: var(--primary);
         font-weight: 700;
         letter-spacing: -0.03em;
     }
     
     .header p {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         color: var(--text-light);
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.2rem;
         font-weight: 400;
-        letter-spacing: -0.01em;
     }
     
-    .header img {
-        max-width: 100%;
-        height: auto;
-        max-height: 420px;
-        border-radius: var(--radius);
-        box-shadow: var(--shadow-lg);
-        transition: var(--transition);
-        object-fit: cover;
-    }
-    
-    .header img:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-lg), 0 22px 28px -8px rgba(0, 0, 0, 0.12);
-    }
-    
-    /* 优化图片容器 - 重新设计无边框样式 */
+    /* 简化图片容器 */
     .profile-img-container {
-        width: 280px;
-        height: 340px;
+        width: 260px;
+        height: 320px;
         margin: 0 auto;
         position: relative;
         overflow: hidden;
-        box-shadow: none;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
     }
     
     .profile-img-container img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* 改为cover以更好地填充容器 */
-        object-position: center top; /* 从顶部开始显示，更适合人像照片 */
+        object-fit: cover;
+        object-position: center top;
         display: block;
-        padding: 0; /* 移除内边距 */
         transition: var(--transition);
     }
     
     .profile-img-container img:hover {
-        transform: scale(1.03); /* 悬停时轻微放大而不是上移 */
+        transform: scale(1.02);
     }
     
-    /* Content sections - more academic */
+    /* Content sections - simplified */
     .content h2 {
-        margin-top: 3.5rem;
-        margin-bottom: 1.75rem;
-        font-size: 1.9rem;
-        color: var (--primary);
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+        color: var(--primary);
         position: relative;
-        padding-bottom: 0.85rem;
+        padding-bottom: 0.75rem;
         font-weight: 600;
     }
     
@@ -214,43 +206,43 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 3.5rem;
-        height: 3px;
+        width: 3rem;
+        height: 2px;
         background: var(--primary);
-        border-radius: 2px;
+        border-radius: 1px;
     }
     
-    /* Cards - refined design */
+    /* Cards - minimal design */
     .card {
         background: var(--bg-card);
         border: 1px solid var(--border);
         border-radius: var(--radius);
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-sm);
         transition: var(--transition);
         overflow: hidden;
         height: 100%;
     }
     
     .card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-lg);
-        border-color: var(--primary-light);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
+        border-color: var(--border);
     }
     
     .card-body {
-        padding: 2rem;
+        padding: 1.75rem;
     }
     
-    /* Research interests cards - more academic */
+    /* Research interests cards - simplified */
     .interest-card {
-        border-left: 4px solid var(--primary);
+        border-left: 3px solid var(--primary);
         transition: var(--transition);
         background-color: var(--bg-alt);
     }
     
     .interest-card:hover {
         border-left-color: var(--accent);
-        transform: translateY(-5px) translateX(3px);
+        transform: translateY(-3px);
     }
     
     .interest-card h5 {
@@ -258,14 +250,14 @@
         font-weight: 600;
         display: flex;
         align-items: center;
-        margin-bottom: 1.4rem;
-        letter-spacing: -0.02em;
+        margin-bottom: 1.2rem;
+        font-size: 1.05rem;
     }
     
     .interest-card h5 i {
-        margin-right: 1rem;
+        margin-right: 0.8rem;
         color: var(--primary);
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     /* Links */
@@ -287,28 +279,29 @@
     
     /* Footer */
     .footer {
-        margin-top: 4rem;
-        padding: 2rem 0;
+        margin-top: 3rem;
+        padding: 1.2rem 0;
         background: var(--bg-alt);
-        color: var(--text-light);
+        color: var(--text-muted);
         border-top: 1px solid var(--border);
         text-align: center;
+        font-size: 0.9rem;
     }
     
     /* Theme switch */
     .theme-switch {
         position: fixed;
-        top: 1.25rem;
-        right: 1.25rem;
+        top: 1rem;
+        right: 1rem;
         z-index: 1031;
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 2.25rem;
+        height: 2.25rem;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 50%;
         background: var(--bg-card);
-        box-shadow: var(--shadow);
+        box-shadow: var(--shadow-sm);
         border: 1px solid var(--border);
         cursor: pointer;
         transition: var(--transition);
@@ -316,12 +309,11 @@
     
     .theme-switch:hover {
         transform: scale(1.05);
-        box-shadow: var(--shadow-lg);
     }
     
     .theme-switch i {
         color: var(--primary);
-        font-size: 1.25rem;
+        font-size: 1.1rem;
     }
     
     /* Back to top button */
@@ -329,8 +321,8 @@
         position: fixed;
         bottom: 1.5rem;
         right: 1.5rem;
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
         border-radius: 50%;
         background: var(--primary);
         color: white;
@@ -343,112 +335,77 @@
         transition: var(--transition);
         z-index: 1000;
         border: none;
-        box-shadow: var (--shadow);
+        box-shadow: var(--shadow);
     }
     
     .back-to-top.visible {
-        opacity: 0.9;
+        opacity: 0.8;
         visibility: visible;
     }
     
     .back-to-top:hover {
         opacity: 1;
-        transform: translateY(-3px);
-        box-shadow: var(--shadow-lg);
+        transform: translateY(-2px);
     }
     
     /* Loading spinner */
     .loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: var(--bg);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: opacity 0.4s ease, visibility 0.4s ease;
-    }
-    
-    .loader.hidden {
-        opacity: 0;
-        visibility: hidden;
+        display: none;
     }
     
     .spinner {
-        width: 40px;
-        height: 40px;
-        border: 3px solid rgba(0,0,0,0.1);
-        border-radius: 50%;
-        border-top-color: var(--primary);
-        animation: spin 0.8s ease-in-out infinite;
+        display: none;
     }
     
-    [data-theme="dark"] .spinner {
-        border-color: rgba(255,255,255,0.1);
-        border-top-color: var(--primary);
-    }
-    
-    @keyframes spin {
-        to { transform: rotate(360deg); }
-    }
-    
-    /* Social icons - more engaging */
+    /* Social icons - simplified */
     .social-icons {
         display: flex;
         justify-content: center;
-        gap: 2rem;
-        margin: 1.5rem 0;
+        gap: 1.5rem;
+        margin: 1.2rem 0;
     }
     
     .social-icons a {
         color: var(--text-light);
-        font-size: 1.4rem;
+        font-size: 1.25rem;
         transition: var(--transition);
     }
     
     .social-icons a:hover {
         color: var(--primary);
-        transform: translateY(-4px);
+        transform: translateY(-3px);
     }
     
-    /* Contact info - more elegant */
+    /* Contact info - simplified */
     .contact-info {
-        line-height: 2.2;
-        font-size: 1.05rem;
+        line-height: 2;
+        font-size: 1rem;
     }
     
     .contact-info i {
-        width: 1.75rem;
+        width: 1.5rem;
         text-align: center;
-        margin-right: 1rem;
-        color: var (--primary);
+        margin-right: 0.8rem;
+        color: var(--primary);
     }
     
-    /* Animations - smoother */
+    /* Animations - simplified for better performance */
     [data-aos] {
-        opacity: 0;
-        transform: translateY(25px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    
-    [data-aos].aos-animate {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
     }
     
     /* Publication styling */
     .publication-entry {
-        padding: 1rem 0;
+        padding: 0.8rem 0;
         border-bottom: 1px solid var(--border);
         transition: var(--transition);
     }
     
     .publication-entry:hover {
         background-color: var(--bg-alt);
-        padding-left: 1rem;
+        padding-left: 0.8rem;
         border-radius: var(--radius);
     }
     
@@ -460,7 +417,8 @@
     /* Blog card enhancement */
     #blog .card h4 {
         font-weight: 600;
-        letter-spacing: -0.025em;
+        font-size: 1.15rem;
+        margin-bottom: 0.5rem;
         transition: var(--transition);
     }
     
@@ -469,39 +427,100 @@
     }
     
     #blog .btn {
-        transition: all 0.3s ease;
-        border-radius: 20px;
-        padding: 0.4rem 1.2rem;
+        transition: var(--transition);
+        border-radius: 1.5rem;
+        padding: 0.35rem 1rem;
+        font-size: 0.9rem;
     }
     
     #blog .btn:hover {
-        transform: translateX(5px);
-        box-shadow: var(--shadow);
+        transform: translateX(3px);
     }
     
     /* Responsive adjustments */
     @media (max-width: 991.98px) {
         .theme-switch {
-            top: 1rem;
-            right: 5rem;
+            top: 0.85rem;
+            right: 4.5rem;
+        }
+        
+        .content h2 {
+            font-size: 1.6rem;
         }
     }
     
     @media (max-width: 767.98px) {
         body {
-            padding-top: 76px;
+            padding-top: 65px;
         }
         
         .header h1 {
-            font-size: 2rem;
+            font-size: 1.9rem;
         }
         
-        .header img {
-            max-height: 250px;
+        .header p {
+            font-size: 1.05rem;
         }
         
         .content h2 {
             font-size: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        
+        .profile-img-container {
+            width: 200px;
+            height: 250px;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .social-icons {
+            gap: 1.3rem;
+        }
+        
+        .interest-card h5 {
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 575.98px) {
+        .header h1 {
+            font-size: 1.7rem;
+            margin-top: 0.8rem;
+        }
+        
+        .header p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .interest-card h5 {
+            font-size: 0.95rem;
+        }
+        
+        .card-body {
+            padding: 1.25rem;
+        }
+        
+        .profile-img-container {
+            width: 180px;
+            height: 220px;
+        }
+        
+        .content h2 {
+            font-size: 1.4rem;
+            margin-top: 2.25rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .content h2::after {
+            width: 2.5rem;
+        }
+        
+        #blog .card h4 {
+            font-size: 1.1rem;
         }
     }
     
@@ -519,6 +538,30 @@
             box-shadow: none;
             border: 1px solid #ddd;
         }
+    }
+    
+    /* 优化其他动画效果 */
+    .card, .interest-card, .social-icons a, .back-to-top {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    /* 简化徽章样式 */
+    .badge {
+        font-weight: 400;
+        padding: 0.35em 0.65em;
+        font-size: 80%;
+        border-radius: 0.25rem;
+        letter-spacing: 0.02em;
+    }
+    
+    .badge-light {
+        background-color: var(--bg-alt);
+        color: var(--text-light);
+    }
+    
+    [data-theme="dark"] .badge-light {
+        background-color: rgba(255,255,255,0.1);
+        color: var(--text-light);
     }
     </style>
 </head>
@@ -557,7 +600,7 @@
                 <img src="pic/us.jpg" alt="Likang Li">
             </div>
             <h1>Likang Li</h1>
-            <p>PhD Student | Beijing Normal-Hong Kong Baptist University</p>
+            <p>PhD Student at Beijing Normal-Hong Kong Baptist University</p>
             <div class="social-icons">
                 <a href="mailto:lilikang@uic.edu.cn" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 <a href="https://github.com/likangmax" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -598,11 +641,11 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card interest-card h-100">
                             <div class="card-body">
-                                <h5><i class="fas fa-brain"></i>Large Language Model Fine-tuning</h5>
+                                <h5><i class="fas fa-brain"></i>LLM Fine-tuning</h5>
                                 <ul class="mb-0">
                                     <li>Statistical Methods for LLM Training</li>
-                                    <li>Efficient Parameter Estimation and Optimization</li>
-                                    <li>Model Adaptation in Low-resource Settings</li>
+                                    <li>Efficient Parameter Estimation</li>
+                                    <li>Low-resource Model Adaptation</li>
                                 </ul>
                             </div>
                         </div>
@@ -610,11 +653,11 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card interest-card h-100">
                             <div class="card-body">
-                                <h5><i class="fas fa-code"></i>Statistical Software Development</h5>
+                                <h5><i class="fas fa-code"></i>Statistical Software</h5>
                                 <ul class="mb-0">
-                                    <li>R Packages for Large-scale Data Analysis</li>
-                                    <li>Implementation of Statistical Models</li>
-                                    <li>Interactive Data Visualization Tools</li>
+                                    <li>R Packages for Data Analysis</li>
+                                    <li>Statistical Models Implementation</li>
+                                    <li>Interactive Data Visualization</li>
                                 </ul>
                             </div>
                         </div>
@@ -622,11 +665,11 @@
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card interest-card h-100">
                             <div class="card-body">
-                                <h5><i class="fas fa-heartbeat"></i>LLMs in Healthcare</h5>
+                                <h5><i class="fas fa-heartbeat"></i>Healthcare Analytics</h5>
                                 <ul class="mb-0">
-                                    <li>Medical Diagnostic Support Systems</li>
-                                    <li>Medical Imaging and Clinical Text Analysis</li>
-                                    <li>Healthcare Data Privacy and Interpretability</li>
+                                    <li>Medical Diagnostic Systems</li>
+                                    <li>Clinical Text Analysis</li>
+                                    <li>Healthcare Data Privacy</li>
                                 </ul>
                             </div>
                         </div>
@@ -682,40 +725,39 @@
             
             <!-- Blog -->
             <div id="blog" data-aos aria-labelledby="blog-heading">
-                <h2 id="blog-heading">Blog & Insights</h2>
+                <h2 id="blog-heading">Blog</h2>
                 <div class="row">
                     <div class="col-md-6 mb-4">
-                        <div class="card h-100">
+                        <article class="card h-100">
                             <div class="card-body d-flex flex-column">
-                                <h4 class="mb-2">Understanding Self-Attention in Transformer Models</h4>
-                                <p class="text-muted mb-3"><i class="far fa-calendar-alt mr-2"></i>November 15, 2024</p>
+                                <h4 class="mb-2">Self-Attention in Transformer Models</h4>
+                                <p class="text-muted mb-3"><i class="far fa-calendar-alt mr-2" aria-hidden="true"></i><time datetime="2024-11-15">November 15, 2024</time></p>
                                 <div class="mb-3">
                                     <span class="badge badge-light mr-2">Deep Learning</span>
-                                    <span class="badge badge-light mr-2">NLP</span>
-                                    <span class="badge badge-light">Transformers</span>
+                                    <span class="badge badge-light">NLP</span>
                                 </div>
-                                <p>A comprehensive exploration of the self-attention mechanism in Transformer architectures, discussing its mathematical foundations and practical implementations.</p>
-                                <a href="https://zhuanlan.zhihu.com/p/7126603608" target="_blank" rel="noopener" class="btn btn-outline-primary mt-auto">
-                                    Read More <i class="fas fa-arrow-right ml-1"></i>
+                                <p>Exploring the self-attention mechanism in Transformer architectures and its mathematical foundations.</p>
+                                <a href="https://zhuanlan.zhihu.com/p/712660360" target="_blank" rel="noopener" class="btn btn-outline-primary mt-auto">
+                                    Read More <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
                                 </a>
                             </div>
-                        </div>
+                        </article>
                     </div>
                     <div class="col-md-6 mb-4">
-                        <div class="card h-100">
+                        <article class="card h-100">
                             <div class="card-body d-flex flex-column">
                                 <h4 class="mb-2">Statistical Computing: New Frontiers</h4>
-                                <p class="text-muted mb-3"><i class="far fa-calendar-alt mr-2"></i>October 3, 2024</p>
+                                <p class="text-muted mb-3"><i class="far fa-calendar-alt mr-2" aria-hidden="true"></i><time datetime="2024-10-03">October 3, 2024</time></p>
                                 <div class="mb-3">
-                                    <span class="badge badge-light mr-2">Statistical Computing</span>
+                                    <span class="badge badge-light mr-2">Statistics</span>
                                     <span class="badge badge-light">Big Data</span>
                                 </div>
-                                <p>Exploring recent advancements in statistical computing methods for large-scale data analysis and their applications in modern research.</p>
+                                <p>Recent advancements in statistical computing methods for large-scale data analysis.</p>
                                 <a href="blog/blog01.html" target="_blank" rel="noopener" class="btn btn-outline-primary mt-auto">
-                                    Read More <i class="fas fa-arrow-right ml-1"></i>
+                                    Read More <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
                                 </a>
                             </div>
-                        </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -726,9 +768,9 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <p class="contact-info">
-                            <i class="fas fa-envelope"></i> Email: <a href="mailto:lilikang@uic.edu.cn">lilikang@uic.edu.cn</a><br>
-                            <i class="fab fa-github"></i> GitHub: <a href="https://github.com/likangmax" target="_blank" rel="noopener">github.com/likangmax</a><br>
-                            <i class="fas fa-map-marker-alt"></i> Location: Beijing Normal-Hong Kong Baptist University, Zhuhai, China
+                            <i class="fas fa-envelope"></i> <a href="mailto:lilikang@uic.edu.cn">lilikang@uic.edu.cn</a><br>
+                            <i class="fab fa-github"></i> <a href="https://github.com/likangmax" target="_blank" rel="noopener">github.com/likangmax</a><br>
+                            <i class="fas fa-map-marker-alt"></i> Beijing Normal-Hong Kong Baptist University, Zhuhai, China
                         </p>
                     </div>
                 </div>
@@ -736,7 +778,7 @@
         </div>
         
         <div class="footer" role="contentinfo">
-            <p>&copy; 2025 Likang Li. All rights reserved.</p>
+            <p>&copy; 2025 Likang Li</p>
         </div>
     </div>
     
@@ -745,140 +787,9 @@
         <i class="fas fa-arrow-up"></i>
     </button>
     
-    <!-- Loading Spinner -->
-    <div class="loader" aria-hidden="true">
-        <div class="spinner"></div>
-    </div>
-    
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script>
-    (function() {
-        // Initialize theme
-        const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const storedTheme = localStorage.getItem('theme');
-        const currentTheme = storedTheme || (prefersDarkMode ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        
-        // Theme switch functionality
-        const themeSwitch = document.getElementById('theme-switch');
-        updateThemeIcon(currentTheme);
-        themeSwitch.addEventListener('click', function() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        });
-        
-        function updateThemeIcon(theme) {
-            const icon = themeSwitch.querySelector('i');
-            if (theme === 'dark') {
-                icon.className = 'fas fa-sun';
-            } else {
-                icon.className = 'fas fa-moon';
-            }
-        }
-        
-        // Defer non-critical functions
-        function deferredInit() {
-            // Initialize animations with Intersection Observer
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('aos-animate');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, {
-                    threshold: 0.1,
-                    rootMargin: '0px 0px -10% 0px'
-                });
-                document.querySelectorAll('[data-aos]').forEach(element => {
-                    observer.observe(element);
-                });
-            }
-            
-            // Smooth scrolling with improved UX
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        // Close mobile menu if open
-                        const navbarCollapse = document.querySelector('.navbar-collapse');
-                        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                            document.querySelector('.navbar-toggler').click();
-                        }
-                        
-                        // Smooth scroll with offset for navbar
-                        const headerOffset = 90;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        }
-        
-        // Back to top button
-        const backToTopButton = document.getElementById('back-to-top');
-        const scrollThreshold = 300;
-        
-        function handleScroll() {
-            if (window.pageYOffset > scrollThreshold) {
-                if (!backToTopButton.classList.contains('visible')) {
-                    backToTopButton.classList.add('visible');
-                }
-            } else {
-                if (backToTopButton.classList.contains('visible')) {
-                    backToTopButton.classList.remove('visible');
-                }
-            }
-        }
-        
-        // Throttle scroll events for performance
-        let scrollTimeout;
-        window.addEventListener('scroll', function() {
-            if (!scrollTimeout) {
-                scrollTimeout = setTimeout(function() {
-                    handleScroll();
-                    scrollTimeout = null;
-                }, 100);
-            }
-        });
-        
-        backToTopButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0, 
-                behavior: 'smooth'
-            });
-        });
-        
-        // Hide loader
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.querySelector('.loader').classList.add('hidden');
-                // 页面加载完成后初始化延迟加载的功能
-                deferredInit();
-            }, 300);
-        });
-        
-        // Initialize immediately if page already loaded
-        if (document.readyState === 'complete' || document.readyState === 'interactive') {
-            setTimeout(function() {
-                document.querySelector('.loader').classList.add('hidden');
-                deferredInit();
-            }, 300);
-        }
-    })();
-    </script>
+    <!-- Scripts - 放在页面底部提高加载速度 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
