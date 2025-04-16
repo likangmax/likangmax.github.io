@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2c5282">
+    <title>BDprecision R Package - Likang Li</title>
+    <meta name="description" content="Details about the BDprecision R package developed by Likang Li.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../pic/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="../pic/apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css"> <!-- Link to main stylesheet -->
+    
+    <style>
+        /* Add specific styles for this page if needed */
+        body {
+            padding-top: 0; /* Remove top padding as header is not fixed */
+            padding-bottom: 3rem;
+        }
+        .package-header {
+            background-color: var(--bg-alt);
+            padding: 3rem 0 2.5rem 0; /* Increased padding */
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border);
+            text-align: center; /* Center align header */
+        }
+        .package-header h1 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 2.2rem; /* Slightly larger */
+            font-weight: 700;
+        }
+        .package-header h1 .fab {
+            font-size: 1.8rem; /* Adjust icon size */
+            margin-right: 0.8rem;
+        }
+        .package-header p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .back-link {
+            margin-bottom: 2rem; /* Increased spacing */
+            display: inline-block;
+            font-weight: 500;
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .back-link:hover {
+             color: var(--primary-light);
+             text-decoration: none;
+        }
+        .back-link i {
+            margin-right: 0.4rem;
+        }
+
+        /* Use card styling for sections */
+        .content section .card {
+            margin-bottom: 2rem;
+        }
+        .content section .card-body {
+            padding: 2rem; /* More padding in cards */
+        }
+
+        .section-heading {
+            margin-top: 0; /* Remove top margin as it's inside card */
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            font-size: 1.5rem; /* Adjust size */
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 0.6rem;
+        }
+        
+        /* Improved code styling */
+        code:not(pre code) { /* Inline code */
+            background-color: var(--bg-alt);
+            padding: 0.2em 0.4em;
+            margin: 0 0.1em;
+            border-radius: 0.25rem;
+            font-size: 90%;
+            color: var(--accent);
+            border: 1px solid var(--border);
+        }
+        pre {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden; /* Needed for border-radius on pre */
+        }
+        pre code {
+            display: block;
+            padding: 1.25rem;
+            overflow-x: auto;
+            background-color: #fdfdfe; /* Slightly off-white background */
+            border: none; /* Remove border from code, apply to pre */
+            border-radius: 0; 
+            color: var(--text);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Basic Syntax Highlighting Mimicry */
+        pre code .code-comment {
+            color: #8a9199; /* Grey for comments */
+            font-style: italic;
+        }
+        pre code .code-function {
+            color: #005cc5; /* Blue for functions */
+        }
+        pre code .code-string {
+            color: #d73a49; /* Red for strings */
+        }
+        pre code .code-argument {
+            color: #e36209; /* Orange for arguments */
+        }
+        pre code .code-operator {
+             color: #005cc5; /* Blue for operators */
+        }
+        pre code .code-package {
+            font-weight: bold; /* Bold for package names */
+            color: #6f42c1; /* Purple */
+        }
+
+        [data-theme="dark"] code:not(pre code) {
+             background-color: rgba(255,255,255,0.1);
+             color: var(--primary-light);
+             border-color: rgba(255,255,255,0.2);
+        }
+        [data-theme="dark"] pre code {
+            background-color: #2d3748; /* Darker background for code block */
+            color: var(--text-light);
+        }
+        /* Dark theme syntax highlight adjustments */
+        [data-theme="dark"] pre code .code-comment {
+            color: #8b949e;
+        }
+        [data-theme="dark"] pre code .code-function {
+            color: #79c0ff;
+        }
+        [data-theme="dark"] pre code .code-string {
+            color: #ff7b72;
+        }
+        [data-theme="dark"] pre code .code-argument {
+            color: #ffa657;
+        }
+        [data-theme="dark"] pre code .code-operator {
+             color: #79c0ff;
+        }
+         [data-theme="dark"] pre code .code-package {
+             color: #d2a8ff;
+         }
+         
+        /* List styling */
+        .content ul {
+            padding-left: 1.5rem;
+        }
+        .content ul li {
+            margin-bottom: 0.6rem;
+            line-height: 1.7;
+        }
+        .content ul li::marker {
+            color: var(--primary);
+        }
+        
+        /* Link list styling */
+        #links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        #links li {
+            margin-bottom: 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+        #links li:hover {
+            background-color: var(--bg-alt);
+            border-color: var(--primary-light);
+            transform: translateX(3px);
+        }
+        #links li a {
+            display: block;
+            padding: 0.8rem 1.2rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        #links li a i.fab, #links li a i.fas:not(.fa-external-link-alt) {
+            margin-right: 0.6rem;
+            color: var(--text-muted);
+            width: 1.2em;
+            text-align: center;
+        }
+        #links li a i.fa-external-link-alt {
+             font-size: 0.8em;
+             color: var(--text-muted);
+             margin-left: 0.3rem;
+        }
+        [data-theme="dark"] #links li a i.fab, 
+        [data-theme="dark"] #links li a i.fas:not(.fa-external-link-alt) {
+             color: var(--text-light);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="package-header">
+        <div class="container">
+            <h1><i class="fab fa-r-project mr-2" aria-hidden="true"></i> BDprecision R Package</h1>
+            <p class="text-muted">Computational Statistics for Precision Medicine</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <a href="../index.html#software" class="back-link"><i class="fas fa-arrow-left mr-2" aria-hidden="true"></i> Back to Software List</a>
+
+        <div class="content">
+            <section id="description">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-heading">Description</h2>
+                        <p>
+                            这个R包实现了Yang, Dai和Pan (2023)提出的块对角(BD)精度矩阵正则化方法，用于超高维数据的精度矩阵估计。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="installation">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-heading">Installation</h2>
+                        <p>首先，安装必要的依赖包:</p>
+                        <pre><code><span class="code-function">install.packages</span>(<span class="code-function">c</span>(<span class="code-string">"Matrix"</span>, <span class="code-string">"glasso"</span>, <span class="code-string">"MASS"</span>))</code></pre>
+                        <p>然后，你可以从 GitHub 安装开发版本 (需要 <code>devtools</code> 包):</p>
+                        <pre><code><span class="code-comment"># install.packages("devtools")</span> 
+<span class="code-comment"># devtools::install_github("likangmax/BDprecision") # 请确保将 'likangmax' 替换为你的实际 GitHub 用户名</span></code></pre>
+                        <!-- <p>
+                            [**Placeholder:** If the package is on CRAN, add instructions here, e.g., 
+                            <code>install.packages("BDprecision")</code>
+                            ]
+                        </p> -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="features">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-heading">主要特点 (Key Features)</h2>
+                        <ul>
+                            <li>使用协方差列筛选(CCS)方法识别显著相关的变量子组</li>
+                            <li>估计块对角结构的精度矩阵，其中只保留显著相关子组的协方差</li>
+                            <li>在处理超高维数据（p >> n）时计算效率高</li>
+                            <li>支持自适应阈值协方差矩阵估计</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="usage">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-heading">使用示例 (Example Usage)</h2>
+                        <p>运行内置示例:</p>
+                        <pre><code><span class="code-function">library</span>(<span class="code-package">BDprecision</span>)
+
+<span class="code-comment"># 运行示例</span>
+<span class="code-function">bd_example</span>()
+
+<span class="code-comment"># 自定义参数的示例</span>
+<span class="code-function">bd_example</span>(<span class="code-argument">n</span> = <span class="code-number">30</span>, <span class="code-argument">p</span> = <span class="code-number">2000</span>, <span class="code-argument">block_size</span> = <span class="code-number">15</span>, <span class="code-argument">rho</span> = <span class="code-number">0.4</span>)</code></pre>
+                        <p>直接使用函数进行分析:</p>
+                        <pre><code><span class="code-comment"># 生成模拟数据</span>
+<span class="code-argument">sim_data</span> <span class="code-operator">&lt;-</span> <span class="code-function">simulate_block_data</span>(<span class="code-argument">n</span> = <span class="code-number">50</span>, <span class="code-argument">p</span> = <span class="code-number">1000</span>, <span class="code-argument">block_size</span> = <span class="code-number">20</span>, <span class="code-argument">rho</span> = <span class="code-number">0.3</span>)
+
+<span class="code-comment"># 估计精度矩阵</span>
+<span class="code-argument">bd_result</span> <span class="code-operator">&lt;-</span> <span class="code-function">bd_precision</span>(<span class="code-argument">sim_data</span>$<span class="code-argument">X</span>)
+
+<span class="code-comment"># 评估结果</span>
+<span class="code-argument">metrics</span> <span class="code-operator">&lt;-</span> <span class="code-function">evaluate_precision</span>(<span class="code-argument">sim_data</span>$<span class="code-argument">Omega</span>, <span class="code-argument">bd_result</span>$<span class="code-argument">Omega</span>)
+<span class="code-function">print</span>(<span class="code-argument">metrics</span>)</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section id="functions">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-heading">函数说明 (Functions)</h2>
+                         <ul>
+                            <li><code>bd_precision()</code>: 主函数，使用块对角正则化估计精度矩阵</li>
+                            <li><code>ccs()</code>: 协方差列筛选过程，识别显著相关的变量子组</li>
+                            <li><code>adaptive_thresholding()</code>: 使用自适应阈值方法估计协方差矩阵</li>
+                            <li><code>evaluate_precision()</code>: 评估精度矩阵估计的性能</li>
+                            <li><code>simulate_block_data()</code>: 生成带有块结构的模拟数据</li>
+                            <li><code>bd_example()</code>: 展示包功能的示例函数</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="references">
+                <div class="card">
+                    <div class="card-body">
+                         <h2 class="section-heading">参考文献 (References)</h2>
+                         <p>Yang, Y., Dai, H., & Pan, J. (2023). Block-diagonal precision matrix regularization for ultra-high dimensional data. <em>Computational Statistics and Data Analysis</em>, 179, 107630. 
+                         <a href="https://doi.org/10.1016/j.csda.2022.107630" target="_blank" rel="noopener">DOI: 10.1016/j.csda.2022.107630 <i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i></a>
+                         </p>
+                     </div>
+                 </div>
+            </section>
+
+            <section id="links">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="section-heading">Links</h2>
+                        <ul>
+                            <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> [**Placeholder:** GitHub Repository - 请替换为实际链接] <i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i></a></li>
+                            <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-r-project" aria-hidden="true"></i> [**Placeholder:** CRAN Page (if applicable) - 请替换为实际链接] <i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i></a></li>
+                            <li><a href="#" target="_blank" rel="noopener"><i class="fas fa-book-open" aria-hidden="true"></i> [**Placeholder:** Documentation/Vignette - 请替换为实际链接] <i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i></a></li>
+                        </ul>
+                     </div>
+                 </div>
+            </section>
+        </div>
+
+        <div class="footer" style="margin-top: 4rem;">
+             <p>&copy; 2024 Likang Li - <a href="../index.html">Back to Main Page</a></p>
+        </div>
+    </div>
+
+    <!-- Scripts (Optional: Add if needed for interactivity on this page) -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script> -->
+</body>
+</html> 
