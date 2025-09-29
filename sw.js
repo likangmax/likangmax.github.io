@@ -3,7 +3,7 @@
  * Lean build to keep offline support reliable
  */
 
-const CACHE_NAME = 'likang-li-cache-v4';
+const CACHE_NAME = 'likang-li-cache-v5';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -11,6 +11,10 @@ const ASSETS_TO_CACHE = [
   './js/main.js',
   './pic/us.jpg',
   './pic/us.webp',
+  './pic/us-400.jpg',
+  './pic/us-400.webp',
+  './pic/us-800.jpg',
+  './pic/us-800.webp',
   './manifest.json',
   './blog/blog01.html'
 ];

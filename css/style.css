@@ -133,12 +133,23 @@ a:focus {
 
 .profile-media picture {
     display: block;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
 }
 
 .profile-media img {
     width: 100%;
+    height: auto;
     display: block;
     border: 1px solid var(--border);
+    aspect-ratio: 3 / 4;
+}
+
+@supports (aspect-ratio: 1) {
+    .profile-media img {
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .profile-summary {

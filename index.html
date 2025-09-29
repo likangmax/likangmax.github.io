@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Source+Serif+4:wght@400;500;600;700&display=swap">
+    <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
 
     <script type="application/ld+json">
@@ -69,9 +70,23 @@
         <header class="profile-header" role="banner">
             <div class="profile-media">
                 <picture>
-                    <source srcset="pic/us.webp" type="image/webp">
-                    <source srcset="pic/us.jpg" type="image/jpeg">
-                    <img src="pic/us.jpg" alt="Portrait of Likang Li" width="960" height="1280" decoding="async" fetchpriority="high">
+                    <source
+                        srcset="pic/us-400.webp 400w, pic/us-800.webp 800w, pic/us.webp 960w"
+                        type="image/webp"
+                        sizes="(max-width: 575px) 45vw, 200px">
+                    <source
+                        srcset="pic/us-400.jpg 400w, pic/us-800.jpg 800w, pic/us.jpg 960w"
+                        type="image/jpeg"
+                        sizes="(max-width: 575px) 45vw, 200px">
+                    <img
+                        src="pic/us-800.jpg"
+                        srcset="pic/us-400.jpg 400w, pic/us-800.jpg 800w, pic/us.jpg 960w"
+                        sizes="(max-width: 575px) 45vw, 200px"
+                        alt="Portrait of Likang Li"
+                        width="800"
+                        height="1067"
+                        decoding="async"
+                        fetchpriority="high">
                 </picture>
             </div>
             <div class="profile-summary">
