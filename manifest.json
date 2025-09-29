@@ -1,11 +1,11 @@
-{
+﻿{
   "name": "Likang Li - Academic Homepage",
   "short_name": "Likang Li",
   "description": "Likang Li's academic homepage - PhD student at Beijing Normal-Hong Kong Baptist University",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#2c5282",
+  "theme_color": "#1f3d5a",
   "icons": [
     {
       "src": "./pic/icon-192.png",
