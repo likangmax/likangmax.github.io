@@ -8,8 +8,8 @@
     --text: #1f2430;
     --text-muted: #535b68;
     --border: rgba(31, 61, 90, 0.16);
-    --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+    --font-serif: Georgia, "Times New Roman", "Songti SC", "Noto Serif", serif;
     --transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
@@ -206,28 +206,6 @@ a:focus {
 
 .profile-social__label {
     line-height: 1;
-}
-
-.profile-links {
-
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: 0.45rem;
-}
-
-.profile-links li {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
-    font-size: 0.95rem;
-}
-
-.profile-links span {
-    min-width: 110px;
-    font-weight: 600;
-    color: var(--text-muted);
 }
 
 .section-block {
@@ -497,10 +475,6 @@ a:focus {
 @media (max-width: 767.98px) {
     .profile-header {
         padding: 1.75rem;
-    }
-
-    .profile-links span {
-        min-width: 90px;
     }
 
     .section-block {
