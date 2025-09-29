@@ -131,6 +131,10 @@ a:focus {
     max-width: 200px;
 }
 
+.profile-media picture {
+    display: block;
+}
+
 .profile-media img {
     width: 100%;
     display: block;
