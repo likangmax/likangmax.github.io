@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(head -n 240 \"D:/OneDrive/AAA_KK/MYCODE/BLOG/likangmax.github.io/index.html\")",
+      "Bash(mv /tmp/index_trimmed.html \"D:/OneDrive/AAA_KK/MYCODE/BLOG/likangmax.github.io/index.html\")",
+      "Bash(_)",
+      "Bash(echo \"--- Files with `_` prefix \\(Jekyll would exclude\\) ---\")",
+      "Bash(curl -sL \"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css\")",
+      "Bash(sha512sum)",
+      "Bash(git -C \"D:/OneDrive/AAA_KK/MYCODE/BLOG/likangmax.github.io\" status --short)",
+      "Bash(git -C \"D:/OneDrive/AAA_KK/MYCODE/BLOG/likangmax.github.io\" ls-files --others --directory vendor/)",
+      "Bash(git -C \"D:/OneDrive/AAA_KK/MYCODE/BLOG/likangmax.github.io\" ls-files --others --directory .claude/)",
+      "Bash(git -C \"D:/OneDrive/AAA_KK/MYCODE/BLOG/likangmax.github.io\" ls-files vendor/)",
+      "Bash(git -C \"D:/OneDrive/AAA_KK/MYCODE/BLOG/likangmax.github.io\" status --short vendor/)",
+      "Bash(awk -F: '$1>=646 && $1<=732')",
+      "Bash(git -C \"D:/OneDrive/AAA_KK/MYCODE/BLOG/likangmax.github.io\" status --short pic/)",
+      "Bash(git *)"
+    ]
+  }
+}
