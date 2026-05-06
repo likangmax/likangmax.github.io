@@ -63,7 +63,7 @@ likangmax.github.io/
 - HTML5 plus Bootstrap 4 utility classes
 - CSS custom properties with flex and grid layout
 - Vanilla JavaScript with Intersection Observer
-- Font Awesome 5 for iconography
+- Inline SVG icons for iconography
 - Service Worker API for caching
 
 ## Contact

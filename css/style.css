@@ -1,28 +1,43 @@
-﻿:root {
+:root {
     --primary: #1f3d5a;
+    --primary-light: #2c5a85;
     --primary-dark: #152a3c;
     --accent: #8c6f56;
     --bg: #f5f6f8;
     --surface: #ffffff;
     --surface-alt: #f0f1f4;
+    --bg-alt: var(--surface-alt);
     --text: #1f2430;
     --text-muted: #535b68;
     --border: rgba(31, 61, 90, 0.16);
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
     --font-serif: Georgia, "Times New Roman", "Songti SC", "Noto Serif", serif;
+    --radius: 14px;
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 10px 22px rgba(15, 23, 42, 0.06);
+    --shadow: 0 18px 44px rgba(15, 23, 42, 0.10);
+    --shadow-lg: 0 26px 64px rgba(15, 23, 42, 0.14);
+    --nav-bg: rgba(255, 255, 255, 0.82);
+    --glow: rgba(31, 61, 90, 0.09);
     --transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 [data-theme="dark"] {
     --primary: #9bb4d1;
+    --primary-light: #b8cbe3;
     --primary-dark: #7a8ea6;
     --accent: #c8ad92;
     --bg: #111820;
     --surface: #161d27;
     --surface-alt: #1d2531;
+    --bg-alt: var(--surface-alt);
     --text: #e8ecf2;
     --text-muted: #9aa3b0;
     --border: rgba(232, 236, 242, 0.15);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.44), 0 12px 26px rgba(0, 0, 0, 0.30);
+    --shadow: 0 22px 54px rgba(0, 0, 0, 0.44);
+    --shadow-lg: 0 30px 72px rgba(0, 0, 0, 0.52);
+    --nav-bg: rgba(22, 29, 39, 0.82);
+    --glow: rgba(155, 180, 209, 0.10);
 }
 
 html {
@@ -32,7 +47,7 @@ html {
 
 body {
     font-family: var(--font-sans);
-    background: var(--bg);
+    background: radial-gradient(1200px circle at 15% -10%, var(--glow), transparent 55%), var(--bg);
     color: var(--text);
     line-height: 1.7;
     padding-top: 78px;
@@ -74,7 +89,16 @@ a:focus {
 .navbar {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
     transition: var(--transition);
+}
+
+@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+    .navbar {
+        background: var(--nav-bg);
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+    }
 }
 
 .navbar-brand {
@@ -96,6 +120,43 @@ a:focus {
 .navbar-nav .nav-link:active {
     color: var(--primary) !important;
     text-decoration: none;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+    position: relative;
+}
+
+.navbar-nav .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0.85rem;
+    right: 0.85rem;
+    bottom: 0.35rem;
+    height: 2px;
+    background: var(--accent);
+    opacity: 0.75;
+    border-radius: 999px;
+}
+
+.icon {
+    width: 1.05em;
+    height: 1.05em;
+    display: inline-block;
+    vertical-align: -0.125em;
+    flex: 0 0 auto;
+}
+
+.icon--stroke {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.icon--fill {
+    fill: currentColor;
 }
 
 .theme-toggle {
@@ -124,6 +185,8 @@ a:focus {
     padding: 2rem;
     background: var(--surface);
     border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
 }
 
 .profile-media {
@@ -143,6 +206,7 @@ a:focus {
     display: block;
     border: 1px solid var(--border);
     aspect-ratio: 3 / 4;
+    border-radius: calc(var(--radius) - 4px);
 }
 
 @supports (aspect-ratio: 1) {
@@ -213,6 +277,8 @@ a:focus {
     border: 1px solid var(--border);
     padding: 2rem;
     margin-bottom: 1.6rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
 }
 
 .section-block h2 {
@@ -284,6 +350,7 @@ a:focus {
 .publication-links {
     display: flex;
     gap: 0.85rem;
+    flex-wrap: wrap;
     margin-top: 0.5rem;
     font-size: 0.95rem;
 }
@@ -429,8 +496,8 @@ a:focus {
 .card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 0;
-    box-shadow: none;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
     transition: var(--transition);
 }
 
@@ -510,5 +577,17 @@ a:focus {
 
     .profile-role {
         font-size: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 }

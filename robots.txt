@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://likangmax.github.io/sitemap.xml

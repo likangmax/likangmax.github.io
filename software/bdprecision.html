@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#2c5282">
+    <meta name="theme-color" content="#1f3d5a">
     <title>BDprecision R Package - Likang Li</title>
     <meta name="description" content="Details about the BDprecision R package developed by Likang Li.">
     
@@ -12,9 +12,9 @@
     <link rel="apple-touch-icon" href="../pic/apple-touch-icon.png">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css"> <!-- Link to main stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" integrity="sha512-0zM5wNn2seI6R+3U5TJi4WwKReUR3BhC9Xq0iWmhMBmQ6IeS4uJdzOqLeYuqo2Tqa/VqJ8dFG7tLq6cZQ==">
     
     <style>
         /* Add specific styles for this page if needed */
@@ -128,6 +128,12 @@
             font-weight: bold; /* Bold for package names */
             color: #6f42c1; /* Purple */
         }
+        pre code .code-number {
+            color: #0550ae; /* Blue for numbers */
+        }
+        [data-theme="dark"] pre code .code-number {
+             color: #79c0ff;
+        }
 
         [data-theme="dark"] code:not(pre code) {
              background-color: rgba(255,255,255,0.1);
@@ -213,13 +219,26 @@
 <body>
     <div class="package-header">
         <div class="container">
-            <h1><i class="fab fa-r-project mr-2" aria-hidden="true"></i> BDprecision R Package</h1>
+            <h1>
+                <svg class="icon icon--stroke mr-2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4a2 2 0 001-1.73z" />
+                    <path d="M3.27 6.96L12 12l8.73-5.04" />
+                    <path d="M12 22V12" />
+                </svg>
+                BDprecision R Package
+            </h1>
             <p class="text-muted">Computational Statistics for Precision Medicine</p>
         </div>
     </div>
 
     <div class="container">
-        <a href="../index.html#software" class="back-link"><i class="fas fa-arrow-left mr-2" aria-hidden="true"></i> Back to Software List</a>
+        <a href="../index.html#software" class="back-link">
+            <svg class="icon icon--stroke mr-2" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 12H6" />
+                <path d="M12 5l-7 7 7 7" />
+            </svg>
+            Back to Software List
+        </a>
 
         <div class="content">
             <section id="description">
@@ -240,8 +259,8 @@
                         <p>首先，安装必要的依赖包:</p>
                         <pre><code><span class="code-function">install.packages</span>(<span class="code-function">c</span>(<span class="code-string">"Matrix"</span>, <span class="code-string">"glasso"</span>, <span class="code-string">"MASS"</span>))</code></pre>
                         <p>然后，你可以从 GitHub 安装开发版本 (需要 <code>devtools</code> 包):</p>
-                        <pre><code><span class="code-comment"># install.packages("devtools")</span> 
-<span class="code-comment"># devtools::install_github("likangmax/BDprecision") # 请确保将 'likangmax' 替换为你的实际 GitHub 用户名</span></code></pre>
+                        <pre><code><span class="code-comment"># install.packages("devtools")</span>
+<span class="code-comment"># devtools::install_github("likangmax/BDprecision")</span></code></pre>
                         <!-- <p>
                             [**Placeholder:** If the package is on CRAN, add instructions here, e.g., 
                             <code>install.packages("BDprecision")</code>
@@ -312,7 +331,14 @@
                     <div class="card-body">
                          <h2 class="section-heading">参考文献 (References)</h2>
                          <p>Yang, Y., Dai, H., & Pan, J. (2023). Block-diagonal precision matrix regularization for ultra-high dimensional data. <em>Computational Statistics and Data Analysis</em>, 179, 107630. 
-                         <a href="https://doi.org/10.1016/j.csda.2022.107630" target="_blank" rel="noopener">DOI: 10.1016/j.csda.2022.107630 <i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i></a>
+                         <a href="https://doi.org/10.1016/j.csda.2022.107630" target="_blank" rel="noopener">
+                             DOI: 10.1016/j.csda.2022.107630
+                             <svg class="icon icon--stroke icon-external" viewBox="0 0 24 24" aria-hidden="true">
+                                 <path d="M14 3h7v7" />
+                                 <path d="M10 14L21 3" />
+                                 <path d="M21 14v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6" />
+                             </svg>
+                         </a>
                          </p>
                      </div>
                  </div>
@@ -323,18 +349,58 @@
                     <div class="card-body">
                         <h2 class="section-heading">Links</h2>
                         <ul>
-                            <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> [**Placeholder:** GitHub Repository - 请替换为实际链接] <i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i></a></li>
-                            <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-r-project" aria-hidden="true"></i> [**Placeholder:** CRAN Page (if applicable) - 请替换为实际链接] <i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i></a></li>
-                            <li><a href="#" target="_blank" rel="noopener"><i class="fas fa-book-open" aria-hidden="true"></i> [**Placeholder:** Documentation/Vignette - 请替换为实际链接] <i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i></a></li>
+                            <li>
+                                <a href="https://github.com/likangmax/BDprecision" target="_blank" rel="noopener">
+                                    <svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 .5C5.73.5.5 5.74.5 12.2c0 5.18 3.44 9.58 8.2 11.13.6.11.82-.26.82-.58 0-.29-.01-1.05-.02-2.06-3.34.74-4.04-1.65-4.04-1.65-.55-1.42-1.34-1.8-1.34-1.8-1.09-.76.08-.75.08-.75 1.2.09 1.84 1.27 1.84 1.27 1.07 1.88 2.81 1.34 3.5 1.02.11-.79.42-1.34.76-1.65-2.66-.31-5.47-1.37-5.47-6.09 0-1.35.46-2.45 1.24-3.31-.12-.31-.54-1.56.12-3.25 0 0 1.01-.33 3.3 1.26a11.2 11.2 0 016 0c2.28-1.59 3.29-1.26 3.29-1.26.66 1.69.24 2.94.12 3.25.77.86 1.23 1.96 1.23 3.31 0 4.73-2.81 5.77-5.48 6.08.43.38.81 1.13.81 2.28 0 1.65-.02 2.98-.02 3.38 0 .32.22.69.83.57 4.76-1.56 8.19-5.95 8.19-11.13C23.5 5.74 18.27.5 12 .5z" />
+                                    </svg>
+                                    GitHub Repository
+                                    <svg class="icon icon--stroke icon-external" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M14 3h7v7" />
+                                        <path d="M10 14L21 3" />
+                                        <path d="M21 14v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://cran.r-project.org/package=BDprecision" target="_blank" rel="noopener">
+                                    <svg class="icon icon--stroke" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4a2 2 0 001-1.73z" />
+                                        <path d="M3.27 6.96L12 12l8.73-5.04" />
+                                        <path d="M12 22V12" />
+                                    </svg>
+                                    CRAN Page
+                                    <svg class="icon icon--stroke icon-external" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M14 3h7v7" />
+                                        <path d="M10 14L21 3" />
+                                        <path d="M21 14v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://likangmax.github.io/BDprecision" target="_blank" rel="noopener">
+                                    <svg class="icon icon--stroke" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 6.25c-1.27-1.1-2.98-1.74-4.85-1.74-1.12 0-2.2.23-3.15.64v14.6c.95-.41 2.03-.64 3.15-.64 1.87 0 3.58.64 4.85 1.74" />
+                                        <path d="M12 6.25c1.27-1.1 2.98-1.74 4.85-1.74 1.12 0 2.2.23 3.15.64v14.6c-.95-.41-2.03-.64-3.15-.64-1.87 0-3.58.64-4.85 1.74" />
+                                        <path d="M12 6.25v14.5" />
+                                    </svg>
+                                    Documentation
+                                    <svg class="icon icon--stroke icon-external" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M14 3h7v7" />
+                                        <path d="M10 14L21 3" />
+                                        <path d="M21 14v6a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h6" />
+                                    </svg>
+                                </a>
+                            </li>
                         </ul>
                      </div>
                  </div>
             </section>
         </div>
 
-        <div class="footer" style="margin-top: 4rem;">
-             <p>&copy; 2024 Likang Li - <a href="../index.html">Back to Main Page</a></p>
-        </div>
+        <footer class="site-footer" style="margin-top: 4rem;">
+             <p>&copy; 2025 Likang Li - <a href="../index.html">Back to Main Page</a></p>
+        </footer>
     </div>
 
     <!-- Scripts (Optional: Add if needed for interactivity on this page) -->

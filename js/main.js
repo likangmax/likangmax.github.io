@@ -7,8 +7,13 @@
     registerServiceWorker();
 
     function initializeTheme() {
-        const storedTheme = localStorage.getItem(THEME_KEY);
-        const theme = storedTheme || 'light';
+        let theme = 'light';
+        try {
+            const storedTheme = localStorage.getItem(THEME_KEY);
+            if (storedTheme) {
+                theme = storedTheme;
+            }
+        } catch (_) {}
         document.documentElement.setAttribute('data-theme', theme);
         return theme;
     }
@@ -35,34 +40,6 @@
                     });
             }
         }, 1000);
-    }
-
-    function initAnimations() {
-        const animatedElements = document.querySelectorAll('[data-aos]');
-        if (!animatedElements.length) {
-            return;
-        }
-
-        if (!('IntersectionObserver' in window)) {
-            animatedElements.forEach(element => element.classList.add('aos-animate'));
-            return;
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('aos-animate');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -10% 0px'
-        });
-
-        setTimeout(() => {
-            animatedElements.forEach(element => observer.observe(element));
-        }, 100);
     }
 
     function initSmoothScrolling(closeNav) {
@@ -199,7 +176,7 @@
             themeSwitch.addEventListener('click', () => {
                 const nextTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
                 document.documentElement.setAttribute('data-theme', nextTheme);
-                localStorage.setItem(THEME_KEY, nextTheme);
+                try { localStorage.setItem(THEME_KEY, nextTheme); } catch (_) {}
                 currentTheme = nextTheme;
                 updateThemeControl(nextTheme);
 
@@ -211,7 +188,6 @@
 
         initSmoothScrolling(closeNav);
         initBackToTopButton();
-        setTimeout(initAnimations, 200);
     }
 
     if (document.readyState === 'loading') {

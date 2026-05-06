@@ -6,14 +6,18 @@
     <meta name="theme-color" content="#2c5282">
     <title>Statistical Computing: New Frontiers | Likang Li's Blog</title>
     <meta name="description" content="Exploring recent advancements in statistical computing methods for large-scale data analysis and their applications in modern research.">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-    </noscript>
+
+    <!-- Social sharing -->
+    <meta property="og:title" content="Statistical Computing: New Frontiers">
+    <meta property="og:description" content="Exploring recent advancements in statistical computing methods for large-scale data analysis and their applications in modern research.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://likangmax.github.io/blog/blog01.html">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Statistical Computing: New Frontiers">
+    <meta name="twitter:description" content="Exploring recent advancements in statistical computing methods for large-scale data analysis and their applications in modern research.">
+    <link rel="stylesheet" href="../vendor/bootstrap/bootstrap.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" integrity="sha512-0zM5wNn2seI6R+3U5TJi4WwKReUR3BhC9Xq0iWmhMBmQ6IeS4uJdzOqLeYuqo2Tqa/VqJ8dFG7tLq6cZQ==">
     <style>
     /* 颜色变量 - 与主页保持一致 */
     :root {
@@ -270,7 +274,7 @@
         margin: 3rem 0;
         padding: 1.5rem;
         background: var(--bg-alt);
-        border-radius: var (--radius);
+        border-radius: var(--radius);
     }
     
     .author-bio img {
@@ -379,7 +383,7 @@
         height: 3rem;
         border-radius: 50%;
         background: var(--primary);
-        color: white;
+        color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -390,16 +394,20 @@
         z-index: 1000;
         border: none;
     }
-    
+
     .back-to-top.visible {
         opacity: 0.9;
         visibility: visible;
     }
-    
+
     .back-to-top:hover {
         opacity: 1;
         transform: translateY(-3px);
         box-shadow: var(--shadow-lg);
+    }
+
+    [data-theme="dark"] .back-to-top {
+        background: var(--primary-dark);
     }
     
     /* Responsive adjustments */
@@ -441,10 +449,10 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" role="navigation" aria-label="Main navigation">
         <div class="container">
             <a class="navbar-brand" href="../index.html">Likang Li</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -452,7 +460,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="../index.html#research">Research</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#blog">All Posts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blog/blog01.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
                 </ul>
             </div>
@@ -460,7 +468,7 @@
     </nav>
     
     <!-- Theme Switch -->
-    <div class="theme-switch" id="theme-switch" aria-label="Switch theme">
+    <div class="theme-switch" id="theme-switch" role="button" tabindex="0" aria-label="Switch theme">
         <i class="fas fa-moon"></i>
     </div>
     
@@ -489,7 +497,7 @@
                 
                 <!-- Author Bio -->
                 <div class="author-bio">
-                    <img src="../pic/us.jpg" alt="Likang Li">
+                    <img src="../pic/us.jpg" alt="Likang Li" width="80" height="80" loading="lazy">
                     <div>
                         <h4>Likang Li</h4>
                         <p>PhD Student in Probability and Mathematical Statistics at Beijing Normal-Hong Kong Baptist University. My research focuses on computational statistics and machine learning methods.</p>
@@ -523,25 +531,26 @@
     </div>
     
     <!-- Footer -->
-    <div class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="social-icons mb-3">
                 <a href="mailto:lilikang@uic.edu.cn" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 <a href="https://github.com/likangmax" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://www.zhihu.com/people/likang_li" target="_blank" rel="noopener" aria-label="Zhihu"><i class="fab fa-zhihu"></i></a>
             </div>
-            <p>&copy; 2024 Likang Li. All rights reserved.</p>
+            <p>&copy; 2025 Likang Li. All rights reserved.</p>
         </div>
-    </div>
-    
+    </footer>
+
     <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
     
     <!-- Scripts -->
+    <script src="../vendor/marked/marked.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
     <script>
     // 博客内容 - 使用Markdown格式，将通过marked.js渲染
     const blogContent = `
@@ -662,12 +671,22 @@ The integration of statistical computing with other fields like artificial intel
         const themeSwitch = document.getElementById('theme-switch');
         updateThemeIcon(currentTheme);
         themeSwitch.addEventListener('click', function() {
+            toggleTheme();
+        });
+        themeSwitch.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleTheme();
+            }
+        });
+
+        function toggleTheme() {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeIcon(newTheme);
-        });
+        }
         
         function updateThemeIcon(theme) {
             const icon = themeSwitch.querySelector('i');
@@ -680,6 +699,7 @@ The integration of statistical computing with other fields like artificial intel
         
         // 回到顶部按钮
         const backToTopButton = document.getElementById('back-to-top');
+        if (!backToTopButton) { /* no back-to-top on this page */ } else {
         const scrollThreshold = 300;
         
         function handleScroll() {
@@ -711,6 +731,7 @@ The integration of statistical computing with other fields like artificial intel
                 behavior: 'smooth'
             });
         });
+        }
     })();
     </script>
 </body>
